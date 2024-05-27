@@ -1,0 +1,45 @@
+{
+  "id": "rafales",
+  "title": "Rafales",
+  "description": "Un jeu de rôle d'après La Horde du Contrevent d'Alain Damasio",
+  "version": "1.0.0",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
+  "url": "#{URL}#",
+  "authors": [
+    {
+      "name": "Kristov",
+      "discord": "Kristov"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "license": "LICENSE",
+  "esmodules": ["rafales.mjs"],
+  "styles": ["rafales.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "Anglais",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "horde": {},
+      "hordier": {}
+    },
+    "Item": {}
+  },
+  "grid": {
+    "distance": 1,
+    "units": "ft"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "TYPES": {
+    "Actor": {
+      "horde": "Horde",
+      "hordier": "Hordier"
+    }
+  },
+  "RAFALES": {
+    "statistiques": {
+      "cohesion": {
+        "label": "Cohesion"
+      },
+      "vitalite": {
+        "label": "Vitalité"
+      },
+      "conviction": {
+        "label": "Conviction"
+      },
+      "connaissance": {
+        "label": "Connaissance"
+      },
+      "espoir": {
+        "label": "Espoir"
+      },
+      "vif": {
+        "label": "Vif"
+      }
+    },
+    "sheets": {
+      "horde": "Horde",
+      "hordier": "Hordier"
+    }
+  }
+}
