@@ -41,5 +41,11 @@
   "grid": {
     "distance": 1,
     "units": "ft"
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["lang/en.json", "lang/fr.json", "styles/*.css", "templates/**/*.hbs"]
+    }
   }
 }

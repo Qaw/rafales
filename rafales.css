@@ -6,7 +6,7 @@
 /* ----------------------------------------- */
 .rafales {
   --color-background: #0b0909;
-  --color-text: #eee8df;
+  --color-text: #1c1a1a;
   --color-primary: var(--color-text);
   --color-secondary: #d7c4a9;
   --color-tertiary: #b6967c;
@@ -25,13 +25,6 @@
   --font-sans: "Signika", sans-serif;
   --font-size-15: 0.9375rem;*/
 }
-.rafales h1,
-.rafales h2,
-.rafales h3,
-.rafales h4 {
-  color: var(--color-h1);
-  border: none;
-}
 /* ----------------------------------------- */
 /*  Application V2 Styles                    */
 /* ----------------------------------------- */
@@ -42,16 +35,16 @@
   --color-form-hint: var(--color-tertiary);
   --color-form-hint-hover: var(--color-secondary);
   background: var(--color-cool-5);
+  background-image: url("./ui/fond.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   gap: 0;
 }
-.rafales.application .window-header {
-  border-bottom: none;
-}
 .rafales.application .window-header .window-title {
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 .rafales.application .window-header .header-control {
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 .rafales.application .background-overlay {
   position: absolute;
@@ -64,4 +57,42 @@
 }
 .rafales.application .window-content {
   padding: 0;
+}
+.rafales.application h1,
+.rafales.application h2,
+.rafales.application h3,
+.rafales.application h4 {
+  color: var(--color-h1);
+  border: none;
+}
+.grid-horde {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.grid-horde .cohesion {
+  grid-row: 2 / 4;
+  grid-column: 2 / 4;
+}
+.grid-horde .connaissance {
+  grid-row: 4 / 5;
+  grid-column: 2 / 4;
+}
+.grid-horde .vitalite {
+  grid-row: 5 / 7;
+  grid-column: 1 / 3;
+}
+.grid-horde .conviction {
+  grid-row: 5 / 7;
+  grid-column: 3 / 5;
+}
+.grid-horde .espoir {
+  grid-row: 7 / 8;
+  grid-column: 1 / 3;
+}
+.grid-horde .vif {
+  grid-row: 7 / 8;
+  grid-column: 3 / 5;
 }

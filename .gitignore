@@ -6,8 +6,6 @@
 node_modules/
 
 # Foundry VTT
-rafales.lock
-signature.json
 packs/
 
 # Less
