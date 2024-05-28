@@ -1,4 +1,31 @@
 /* ----------------------------------------- */
+/*  Font Faces                               */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/*  CSS Variables                            */
+/* ----------------------------------------- */
+.rafales {
+  --color-background: #0b0909;
+  --color-text: #1c1a1a;
+  --color-primary: var(--color-text);
+  --color-secondary: #d7c4a9;
+  --color-tertiary: #b6967c;
+  --color-header: #cac5ba;
+  --color-sidebar: #cfc7bb;
+  --color-h1: #cfbea2;
+  --color-frame: #3f3128;
+  --color-frame-bg: #1c1a1a;
+  --color-accent: #cf9356;
+  --color-link-text: #f36739;
+  --color-border-highlight: var(--color-accent);
+  /*
+  --font-h1: "AwerySmallcaps", serif;
+  --font-body: "Constantia", serif;
+  --font-quote: "CaslonAntique", serif;
+  --font-sans: "Signika", sans-serif;
+  --font-size-15: 0.9375rem;*/
+}
+/* ----------------------------------------- */
 /*  Application V2 Styles                    */
 /* ----------------------------------------- */
 .rafales.application {
@@ -30,6 +57,11 @@
 }
 .rafales.application .window-content {
   padding: 0;
+}
+.rafales.application .window-content .grid-horde {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 .rafales.application h1,
 .rafales.application h2,

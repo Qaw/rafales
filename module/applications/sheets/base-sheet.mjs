@@ -14,7 +14,12 @@ export const RafalesSheetMixin = (Base) => {
 
     /** @override */
     static DEFAULT_OPTIONS = {
-      form: { submitOnChange: true },
+      tag: "form",
+      form: { 
+        submitOnChange: true,
+        closeOnSubmit: false
+      },
+      resizable: true,
     };
 
     /**

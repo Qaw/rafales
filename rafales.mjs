@@ -26,6 +26,7 @@ Hooks.once("init", function() {
   // Configuration
   globalThis.rafales = game.system;
   game.system.CONST = SYSTEM;
+  CONFIG.SYSTEM = SYSTEM;
 
   // Actor document configuration
   CONFIG.Actor.documentClass = documents.RafalesActor;
