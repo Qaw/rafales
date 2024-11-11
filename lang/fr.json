@@ -26,9 +26,29 @@
         "label": "Vif"
       }
     },
-    "sheets": {
-      "horde": "Horde",
-      "hordier": "Hordier"
+    "Horde": {
+      "FIELDS": {
+        "statistiques": {
+          "cohesion": {
+            "label": "Cohesion"
+          },
+          "vitalite": {
+            "label": "Vitalité"
+          },
+          "conviction": {
+            "label": "Conviction"
+          },
+          "connaissance": {
+            "label": "Connaissance"
+          },
+          "espoir": {
+            "label": "Espoir"
+          },
+          "vif": {
+            "label": "Vif"
+          }
+        }
+      }
     }
   }
 }

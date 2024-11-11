@@ -26,6 +26,8 @@ export default class HordeSheet extends RafalesActorSheet {
     context.espoir = context.actor.system.statistiques.espoir
     context.vif = context.actor.system.statistiques.vif
 
+    context.connaissanceArray = Array.from({ length: 5 }, (_, index) => index < context.connaissance.valeur)
+
     // Name and img.
     context.header = {
       name: context.isPlayMode ? context.actor.name : context.actor.name,

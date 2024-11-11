@@ -45,7 +45,7 @@
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"],
-      "paths": ["lang/en.json", "lang/fr.json", "styles/*.css", "templates/**/*.hbs"]
+      "paths": ["lang/en.json", "lang/fr.json", "rafales.css", "templates/**/*.hbs"]
     }
   }
 }

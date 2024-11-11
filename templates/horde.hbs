@@ -1,11 +1,32 @@
 {{log 'horde' this}}
 <div class="grid-horde">
-    <div class="cohesion">Cohesion: {{cohesion.valeur}}</div>
-    <div class="vitalite">Vitalite: {{vitalite.valeur}}</div>
-    <div class="conviction">Conviction: {{conviction.valeur}}</div>
-    <div class="connaissance">Connaissance: {{connaissance.valeur}}</div>
-    <div class="espoir">Espoir: {{espoir.valeur}}</div>
-    <div class="vif">Vif: {{vif.valeur}}
+    <div class="cohesion">
+        <img class="cohesion-img" src="/systems/rafales/assets/cran_{{cohesion.valeur}}.webp" data-tooltip="{{cohesion.valeur}}" />
+        <div class="cohesion-input">
+            {{formInput systemFields.statistiques.fields.cohesion.fields.valeur value=system.statistiques.cohesion.valeur disabled=false}}
+        </div>
+    </div>
+    <div class="vitalite">
+        <img class="vitalite-img" src="/systems/rafales/assets/cran_{{vitalite.valeur}}.webp" data-tooltip="{{vitalite.valeur}}" />
+        <div class="vitalite-input">
+            {{formInput systemFields.statistiques.fields.vitalite.fields.valeur value=system.statistiques.vitalite.valeur disabled=false}}
+        </div>            
+    </div>    
+    <div class="conviction">
+        <img class="conviction-img" src="/systems/rafales/assets/cran_{{conviction.valeur}}.webp" data-tooltip="{{conviction.valeur}}" />
+        <div class="conviction-input">
+            {{formInput systemFields.statistiques.fields.conviction.fields.valeur value=system.statistiques.conviction.valeur disabled=false}}
+        </div>
+    </div>
+    <div class="connaissance">
+            CONNAISSANCE {{formInput systemFields.statistiques.fields.connaissance.fields.valeur value=system.statistiques.connaissance.valeur disabled=false}}<br>
+            {{#each connaissanceArray as |connaissance index|}}
+                {{log this}}
+                <input type="checkbox" name="option1" {{#if connaissance}}checked {{/if}}>                               
+            {{/each}}    
+    </div>
+    <div class="espoir">ESPOIR <br> {{espoir.valeur}}</div>
+    <div class="vif">VIF <br> {{vif.valeur}}
 </div>
 
 
