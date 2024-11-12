@@ -1,32 +1,55 @@
 {{log 'horde' this}}
 <div class="grid-horde">
     <div class="cohesion">
+        <div class="cohesion-name" data-tooltip="Clic gauche pour diminuer de 1, clic droit pour augemnter de 1">COHESION</div>
         <img class="cohesion-img" src="/systems/rafales/assets/cran_{{cohesion.valeur}}.webp" data-tooltip="{{cohesion.valeur}}" />
         <div class="cohesion-input">
-            {{formInput systemFields.statistiques.fields.cohesion.fields.valeur value=system.statistiques.cohesion.valeur disabled=false}}
-        </div>
-    </div>
-    <div class="vitalite">
-        <img class="vitalite-img" src="/systems/rafales/assets/cran_{{vitalite.valeur}}.webp" data-tooltip="{{vitalite.valeur}}" />
-        <div class="vitalite-input">
-            {{formInput systemFields.statistiques.fields.vitalite.fields.valeur value=system.statistiques.vitalite.valeur disabled=false}}
-        </div>            
-    </div>    
-    <div class="conviction">
-        <img class="conviction-img" src="/systems/rafales/assets/cran_{{conviction.valeur}}.webp" data-tooltip="{{conviction.valeur}}" />
-        <div class="conviction-input">
-            {{formInput systemFields.statistiques.fields.conviction.fields.valeur value=system.statistiques.conviction.valeur disabled=false}}
+            {{#if isGM}}{{formInput systemFields.statistiques.fields.cohesion.fields.valeur value=system.statistiques.cohesion.valeur disabled=false}}{{/if}}
         </div>
     </div>
     <div class="connaissance">
-            CONNAISSANCE {{formInput systemFields.statistiques.fields.connaissance.fields.valeur value=system.statistiques.connaissance.valeur disabled=false}}<br>
+        <div class="connaissance-name">CONNAISSANCE</div>
+        <div class="connaissance-input">
             {{#each connaissanceArray as |connaissance index|}}
-                {{log this}}
-                <input type="checkbox" name="option1" {{#if connaissance}}checked {{/if}}>                               
-            {{/each}}    
+                <input type="checkbox" name="connaissance{{connaissance.indice}}" data-action="changeConnaissance" data-value="{{connaissance.indice}}" {{#if connaissance.value}}checked {{/if}}>                               
+            {{/each}}
+            <img class="connaissance-img {{#unless connaissanceFull}}cache{{/unless}}" src="/systems/rafales/assets/cran_20.webp" data-tooltip="Restaurer la Cohésion" />
+        </div>
     </div>
-    <div class="espoir">ESPOIR <br> {{espoir.valeur}}</div>
-    <div class="vif">VIF <br> {{vif.valeur}}
+
+    <div class="vitalite">
+        <div class="vitalite-name">VITALITE</div>
+        <img class="vitalite-img" src="/systems/rafales/assets/cran_{{vitalite.valeur}}.webp" data-tooltip="{{vitalite.valeur}}" />
+        <div class="vitalite-input">
+            {{#if isGM}}{{formInput systemFields.statistiques.fields.vitalite.fields.valeur value=system.statistiques.vitalite.valeur disabled=false}}{{/if}}
+        </div>            
+    </div>    
+
+    <div class="espoir">
+        <div class="espoir-name">ESPOIR</div>
+        <div class="espoir-input">
+            {{#each espoirArray as |espoir index|}}
+                <input type="checkbox" name="espoir{{espoir.indice}}" data-action="changeEspoir" data-value="{{espoir.indice}}" {{#if espoir.value}}checked {{/if}}>                               
+            {{/each}}
+            <img class="espoir-img {{#unless espoirFull}}cache{{/unless}}" src="/systems/rafales/assets/cran_20.webp" data-tooltip="Restaurer la Vitalité" />
+        </div>
+    </div>
+    <div class="conviction">
+        <div class="conviction-name">CONVICTION</div>
+        <img class="conviction-img" src="/systems/rafales/assets/cran_{{conviction.valeur}}.webp" data-tooltip="{{conviction.valeur}}" />
+        <div class="conviction-input">
+            {{#if isGM}}{{formInput systemFields.statistiques.fields.conviction.fields.valeur value=system.statistiques.conviction.valeur disabled=false}}{{/if}}
+        </div>
+    </div>    
+    <div class="vif">
+        <div class="vif-name">VIF</div>
+        <div class="vif-input">
+            {{#each vifArray as |vif index|}}
+                <input type="checkbox" name="vif{{vif.indice}}" data-action="changeVif" data-value="{{vif.indice}}" {{#if vif.value}}checked {{/if}}>                               
+            {{/each}}
+            <img class="vif-img {{#unless vifFull}}cache{{/unless}}" src="/systems/rafales/assets/cran_20.webp" data-tooltip="Restaurer la Conviction" />
+        </div>
+    </div>
 </div>
 
 
