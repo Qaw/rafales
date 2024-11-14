@@ -129,13 +129,13 @@ export default class HordeSheet extends RafalesActorSheet {
     conviction.addEventListener("contextmenu", (event) => this._ChangeStatistique(event, "conviction", false))
 
     const connaissance = this.element.querySelector(".connaissance-img")
-    connaissance.addEventListener("click", (event) => this._ResetStatistique(event, "cohesion", true))
+    connaissance.addEventListener("click", async (event) => await this._ResetStatistique(event, "cohesion", true))
 
     const espoir = this.element.querySelector(".espoir-img")
-    espoir.addEventListener("click", (event) => this._ResetStatistique(event, "espoir", true))
+    espoir.addEventListener("click", async (event) => await this._ResetStatistique(event, "espoir", true))
 
     const vif = this.element.querySelector(".vif-img")
-    vif.addEventListener("click", (event) => this._ResetStatistique(event, "vif", true))
+    vif.addEventListener("click", async (event) => await this._ResetStatistique(event, "vif", true))
   }
 
   _ChangeStatistique(event, statistique, decrease) {
@@ -164,17 +164,52 @@ export default class HordeSheet extends RafalesActorSheet {
     }
   }
 
-  _ResetStatistique(event, statistique, decrease) {
+  async _ResetStatistique(event, statistique, decrease) {
     event.preventDefault()
+    let proceed
+    let oldValue
     switch (statistique) {
       case "cohesion":
+        proceed = await foundry.applications.api.DialogV2.confirm({
+          content: game.i18n.format("RAFALES.Warning.confirmReset", { name: "cohésion" }),
+          rejectClose: false,
+          modal: true,
+        })
+        if (!proceed) return
+        oldValue = this.actor.system.statistiques.cohesion.valeur
         this.actor.update({ "system.statistiques.cohesion.valeur": 20, "system.statistiques.connaissance.valeur": 0 })
+        ChatMessage.create({
+          user: game.user.id,
+          content: `La cohésion a été restaurée. L'ancienne valeur était ${oldValue}.`,
+        })
         break
       case "espoir":
+        proceed = await foundry.applications.api.DialogV2.confirm({
+          content: game.i18n.format("RAFALES.Warning.confirmReset", { name: "vitalité" }),
+          rejectClose: false,
+          modal: true,
+        })
+        if (!proceed) return
+        oldValue = this.actor.system.statistiques.vitalite.valeur
         this.actor.update({ "system.statistiques.vitalite.valeur": 20, "system.statistiques.espoir.valeur": 0 })
+        ChatMessage.create({
+          user: game.user.id,
+          content: `La vitalité a été restaurée. L'ancienne valeur était ${oldValue}.`,
+        })
         break
       case "vif":
+        proceed = await foundry.applications.api.DialogV2.confirm({
+          content: game.i18n.format("RAFALES.Warning.confirmReset", { name: "conviction" }),
+          rejectClose: false,
+          modal: true,
+        })
+        if (!proceed) return
+        oldValue = this.actor.system.statistiques.conviction.valeur
         this.actor.update({ "system.statistiques.conviction.valeur": 20, "system.statistiques.vif.valeur": 0 })
+        ChatMessage.create({
+          user: game.user.id,
+          content: `La conviction a été restaurée. L'ancienne valeur était ${oldValue}.`,
+        })
         break
     }
   }

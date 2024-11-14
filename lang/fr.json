@@ -49,6 +49,9 @@
           }
         }
       }
+    },
+    "Warning": {
+      "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?"
     }
   }
 }
