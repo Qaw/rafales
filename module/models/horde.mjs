@@ -8,7 +8,6 @@ export default class RafalesHorde extends foundry.abstract.TypeDataModel {
         {
           type: new fields.StringField({ initial: type }),
           valeur: type === "vital" ? new fields.NumberField({ initial: 20, min: 0, max: 20 }) : new fields.NumberField({ initial: 0, min: 0, max: 5 }),
-          related: new fields.StringField({ initial: related }),
         },
         { label }
       )

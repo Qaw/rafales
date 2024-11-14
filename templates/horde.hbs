@@ -1,5 +1,9 @@
 {{log 'horde' this}}
 <div class="grid-horde">
+    <div class="nom">
+        <div class="nom-label">N° de Horde</div>
+        {{formInput fields.name value=source.name}}
+    </div>
     <div class="cohesion">
         <div class="cohesion-name" data-tooltip="Clic gauche pour diminuer de 1, clic droit pour augemnter de 1">COHESION</div>
         <img class="cohesion-img" src="/systems/rafales/assets/cran_{{cohesion.valeur}}.webp" data-tooltip="{{cohesion.valeur}}" />
