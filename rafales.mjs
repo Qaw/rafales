@@ -45,4 +45,8 @@ Hooks.once("init", function () {
     types: ["hordier"],
     makeDefault: true,
   })
+
+  Handlebars.registerHelper("numeroLien", function (value) {
+    return parseInt(value) + 1
+  })
 })

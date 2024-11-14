@@ -34,7 +34,7 @@
   "documentTypes": {
     "Actor": {
       "horde": {},
-      "hordier": {}
+      "hordier": { "htmlFields": ["biographie", "notes"] }
     },
     "Item": {}
   },

@@ -1,3 +1,70 @@
+/* ----------------------------------------- */
+/*  Font Faces                               */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/*  CSS Variables                            */
+/* ----------------------------------------- */
+.rafales {
+  --color-background: #0b0909;
+  --color-text: #1c1a1a;
+  --color-primary: var(--color-text);
+  --color-secondary: #d7c4a9;
+  --color-tertiary: #b6967c;
+  --color-header: #cac5ba;
+  --color-sidebar: #cfc7bb;
+  --color-h1: #cfbea2;
+  --color-frame: #3f3128;
+  --color-frame-bg: #1c1a1a;
+  --color-accent: #cf9356;
+  --color-link-text: #f36739;
+  --color-border-highlight: var(--color-accent);
+  /*
+  --font-h1: "AwerySmallcaps", serif;
+  --font-body: "Constantia", serif;
+  --font-quote: "CaslonAntique", serif;
+  --font-sans: "Signika", sans-serif;
+  --font-size-15: 0.9375rem;*/
+}
+/* ----------------------------------------- */
+/*  Application V2 Styles                    */
+/* ----------------------------------------- */
+.rafales.application {
+  --color-header-background: transparent;
+  --color-form-label: var(--color-h1);
+  --color-form-label-hover: var(--color-primary);
+  --color-form-hint: var(--color-tertiary);
+  --color-form-hint-hover: var(--color-secondary);
+  background: var(--color-cool-5);
+  background-image: url("ui/fond.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  gap: 0;
+}
+.rafales.application .window-header .window-title {
+  color: var(--color-text);
+}
+.rafales.application .window-header .header-control {
+  color: var(--color-text);
+}
+.rafales.application .background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border: none;
+  object-fit: cover;
+  object-position: top right;
+}
+.rafales.application .window-content {
+  padding: 0;
+}
+.rafales.application h1,
+.rafales.application h2,
+.rafales.application h3,
+.rafales.application h4 {
+  color: var(--color-h1);
+  border: none;
+}
 .horde {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -171,4 +238,7 @@
 }
 .horde .cache {
   visibility: hidden;
+}
+.hordier .lien {
+  display: flex;
 }

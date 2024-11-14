@@ -1,0 +1,29 @@
+{{log "hordier" this}}
+<div class="hordier">
+  <div class="nom">
+    <div class="nom-label">Nom</div>
+    {{formInput fields.name value=source.name}}
+  </div>
+  <div class="horde-nom">
+    <div class="horde-label">N° de Horde</div>
+    {{formInput systemFields.horde value=system.horde}}
+  </div>
+  <fieldset>
+    <legend>Biographie</legend>
+    {{formInput systemFields.biographie enriched=enrichedBiographie value=system.biographie name="system.biographie" toggled=true}}
+  </fieldset>
+  <fieldset>
+    <legend>Liens</legend>
+    {{#each liens as |lien index|}}
+      <div class="lien">
+        <div class="lien-label">Nom (Lien {{numeroLien index}})</div>
+        <div class="lien-nom">{{lien.nom}}</div>
+        <div class="lien-lien">{{lien.lien}}</div>
+      </div>
+    {{/each}}
+  </fieldset>
+  <fieldset>
+    <legend>Notes</legend>
+    {{formInput systemFields.notes enriched=enrichedNotes value=system.notes name="system.notes" toggled=true}}
+  </fieldset>
+</div>

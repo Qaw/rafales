@@ -50,7 +50,6 @@ export default class RafalesActorSheet extends HandlebarsApplicationMixin(foundr
       actor: this.document,
       system: this.document.system,
       source: this.document.toObject(),
-      // enrichedDescription: await TextEditor.enrichHTML(this.document.system.description, { async: true }),
       isEditMode: this.isEditMode,
       isPlayMode: this.isPlayMode,
       isEditable: this.isEditable,
