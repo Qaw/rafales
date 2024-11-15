@@ -54,7 +54,8 @@
       "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?"
     },
     "Tooltip": {
-      "createLink": "Créer un lien",
+      "createLink": "Créer un nouveau lien",
+      "deleteLink": "Supprimer le lien",
       "increaseDecreaseStat": "Clic gauche pour diminuer de 1, clic droit pour augmenter de 1"
     },
     "Label": {

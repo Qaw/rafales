@@ -21,9 +21,12 @@
       {{#unless @root.isPlayMode}}<a class="action" data-tooltip="{{localize 'RAFALES.Tooltip.createLink'}}" data-tooltip-direction="UP"><i class="fas fa-plus" data-action="createLink"></i></a>{{/unless}}</legend>
     {{#each liens as |lien index|}}
       <div class="lien">
-        <div class="lien-label">Nom (Lien {{numeroLien index}}) : </div>
+        <div class="lien-label"><span style="color:#671006;">Nom</span> (Lien {{numeroLien index}}) : </div>
         <input class="lien-nom" name="system.liens.{{index}}.nom" type="text" value="{{lien.nom}}" data-dtype="String" {{#if @root.isPlayMode}}disabled{{/if}} />
         <input class="lien-lien" name="system.liens.{{index}}.lien" type="text" value="{{lien.lien}}" data-dtype="String" {{#if @root.isPlayMode}}disabled{{/if}} />
+        {{#unless @root.isPlayMode}}
+          <a data-action="deleteLink" data-index="{{index}}" data-tooltip="{{localize 'RAFALES.Tooltip.deleteLink'}}"><i class="fas fa-trash"></i></a>
+        {{/unless}}
       </div>
     {{/each}}
   </fieldset>

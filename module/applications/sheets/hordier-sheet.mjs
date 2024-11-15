@@ -10,10 +10,11 @@ export default class HordierSheet extends RafalesActorSheet {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["hordier"],
-    position: { width: 500, height: 500 },
+    position: { width: 670, height: 1000 },
     actions: {
       toggleSheet: HordierSheet.#onToggleSheet,
       createLink: HordierSheet.#onCreateLink,
+      deleteLink: HordierSheet.#onDeleteLink,
     },
   }
 
@@ -81,7 +82,14 @@ export default class HordierSheet extends RafalesActorSheet {
    */
   static #onCreateLink(event, target) {
     let liens = this.actor.system.liens
-    liens.push({ nom: "Nouveau lien", lien: "" })
+    liens.push({ nom: "", lien: "" })
+    this.actor.update({ "system.liens": liens })
+  }
+
+  static #onDeleteLink(event, target) {
+    const index = target.dataset.index
+    let liens = this.actor.system.liens
+    liens.splice(index, 1)
     this.actor.update({ "system.liens": liens })
   }
 }
