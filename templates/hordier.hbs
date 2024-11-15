@@ -1,15 +1,20 @@
 {{log "hordier" this}}
 <div class="hordier">
   <div class="hordier-header">
-    <div class="nom">
-      <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
-      {{formInput fields.name value=source.name disabled=isPlayMode}}
+    <div class="hordier-header-gauche">
+      <div class="nom">
+        <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
+        {{formInput fields.name value=source.name disabled=isPlayMode}}
+      </div>
+      <div class="horde-nom">
+        <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
+        {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}
+        <a class="control" data-action="toggleSheet" data-tooltip="RAFALES.ToggleSheet" data-tooltip-direction="UP">
+        <i class="fa-solid fa-user-{{ifThen isPlayMode 'lock' 'pen'}}"></i></a>   
+      </div>
     </div>
-    <div class="horde-nom">
-      <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
-      {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}
-      <a class="control" data-action="toggleSheet" data-tooltip="RAFALES.ToggleSheet" data-tooltip-direction="UP">
-      <i class="fa-solid fa-user-{{ifThen isPlayMode 'lock' 'pen'}}"></i></a>   
+    <div class="hordier-header-droite">
+      <img class="hordier-img" src="{{actor.img}}" data-edit="img" data-action="editImage" data-tooltip="{{actor.name}}" />
     </div>
   </div>
   <fieldset>

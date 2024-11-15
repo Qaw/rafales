@@ -292,34 +292,44 @@
 .rafales .horde .cache {
   visibility: hidden;
 }
-.rafales .hordier .hordier-header .nom,
-.rafales .hordier .hordier-header .horde-nom {
+.rafales .hordier .hordier-header {
+  display: flex;
+  justify-content: space-between;
+}
+.rafales .hordier .hordier-header .hordier-header-gauche .nom,
+.rafales .hordier .hordier-header .hordier-header-gauche .horde-nom {
   display: flex;
   align-items: center;
   margin: 10px 0 0 20px;
   gap: 10px;
 }
-.rafales .hordier .hordier-header .nom .nom-label {
+.rafales .hordier .hordier-header .hordier-header-gauche .nom .nom-label {
   font-family: "bakatoo", Arial, sans-serif;
   font-size: 1.8rem;
   color: #671006;
 }
-.rafales .hordier .hordier-header .nom input {
+.rafales .hordier .hordier-header .hordier-header-gauche .nom input {
   font-family: "bakatoo", Arial, sans-serif;
   font-size: 1.8rem;
   width: 400px;
   background-color: inherit;
 }
-.rafales .hordier .hordier-header .horde-nom {
+.rafales .hordier .hordier-header .hordier-header-gauche .horde-nom {
   font-family: "bakatoo", Arial, sans-serif;
   font-size: 1.8rem;
   color: #671006;
 }
-.rafales .hordier .hordier-header .horde-nom input {
+.rafales .hordier .hordier-header .hordier-header-gauche .horde-nom input {
   font-family: "bakatoo", Arial, sans-serif;
   font-size: 1.8rem;
   width: 70px;
   background-color: inherit;
+}
+.rafales .hordier .hordier-header .hordier-header-droite img {
+  width: 100px;
+  height: auto;
+  margin: 10px 20px 0 0;
+  border: none;
 }
 .rafales .hordier fieldset {
   margin: 10px 20px 0 20px;

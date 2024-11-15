@@ -1,36 +1,50 @@
 .hordier {
   .hordier-header {
-    .nom,
-    .horde-nom {
-      display: flex;
-      align-items: center;
-      margin: 10px 0 0 20px;
-      gap: 10px;
-    }
+    display: flex;
+    justify-content: space-between;
 
-    .nom {
-      .nom-label {
+    .hordier-header-gauche {
+      .nom,
+      .horde-nom {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 20px;
+        gap: 10px;
+      }
+
+      .nom {
+        .nom-label {
+          font-family: "bakatoo", Arial, sans-serif;
+          font-size: 1.8rem;
+          color: #671006;
+        }
+
+        input {
+          font-family: "bakatoo", Arial, sans-serif;
+          font-size: 1.8rem;
+          width: 400px;
+          background-color: inherit;
+        }
+      }
+      .horde-nom {
         font-family: "bakatoo", Arial, sans-serif;
         font-size: 1.8rem;
         color: #671006;
-      }
-
-      input {
-        font-family: "bakatoo", Arial, sans-serif;
-        font-size: 1.8rem;
-        width: 400px;
-        background-color: inherit;
+        input {
+          font-family: "bakatoo", Arial, sans-serif;
+          font-size: 1.8rem;
+          width: 70px;
+          background-color: inherit;
+        }
       }
     }
-    .horde-nom {
-      font-family: "bakatoo", Arial, sans-serif;
-      font-size: 1.8rem;
-      color: #671006;
-      input {
-        font-family: "bakatoo", Arial, sans-serif;
-        font-size: 1.8rem;
-        width: 70px;
-        background-color: inherit;
+
+    .hordier-header-droite {
+      img {
+        width: 100px;
+        height: auto;
+        margin: 10px 20px 0 0;
+        border: none;
       }
     }
   }
