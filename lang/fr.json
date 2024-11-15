@@ -52,6 +52,9 @@
     },
     "Warning": {
       "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?"
+    },
+    "Tooltip": {
+      "createLink": "Créer un lien"
     }
   }
 }

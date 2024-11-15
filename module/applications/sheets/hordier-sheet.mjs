@@ -5,6 +5,9 @@ export default class HordierSheet extends RafalesActorSheet {
   static DEFAULT_OPTIONS = {
     classes: ["hordier"],
     position: { width: 500, height: 500 },
+    actions: {
+      createLink: HordierSheet.#onCreateLink,
+    },
   }
 
   /** @override */
@@ -23,5 +26,11 @@ export default class HordierSheet extends RafalesActorSheet {
     context.enrichedNotes = await TextEditor.enrichHTML(this.document.system.notes, { async: true })
     context.liens = this.document.system.liens
     return context
+  }
+
+  static #onCreateLink(event, target) {
+    let liens = this.actor.system.liens
+    liens.push({ nom: "Nouveau lien", lien: "" })
+    this.actor.update({ "system.liens": liens })
   }
 }

@@ -13,12 +13,13 @@
     {{formInput systemFields.biographie enriched=enrichedBiographie value=system.biographie name="system.biographie" toggled=true}}
   </fieldset>
   <fieldset>
-    <legend>Liens</legend>
+    <legend>Liens
+      <a class="action" data-tooltip="{{localize 'RAFALES.Tooltip.createLink'}}" data-tooltip-direction="UP"><i class="fas fa-plus" data-action="createLink"></i></a></legend>
     {{#each liens as |lien index|}}
       <div class="lien">
-        <div class="lien-label">Nom (Lien {{numeroLien index}})</div>
-        <div class="lien-nom">{{lien.nom}}</div>
-        <div class="lien-lien">{{lien.lien}}</div>
+        <div class="lien-label">Nom (Lien {{numeroLien index}}) : </div>
+        <input class="lien-nom" name="system.liens.{{index}}.nom" type="text" value="{{lien.nom}}" data-dtype="String" />
+        <input class="lien-lien" name="system.liens.{{index}}.lien" type="text" value="{{lien.lien}}" data-dtype="String" />
       </div>
     {{/each}}
   </fieldset>
