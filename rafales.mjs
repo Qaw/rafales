@@ -6,47 +6,57 @@
  */
 
 // Configuration
-import { SYSTEM } from "./module/config/system.mjs";
-globalThis.SYSTEM = SYSTEM;
+import { SYSTEM } from "./module/config/system.mjs"
+globalThis.SYSTEM = SYSTEM
 
 // Import Modules
-import * as applications from "./module/applications/_module.mjs";
-import * as documents from "./module/documents/_module.mjs";
-import * as models from "./module/models/_module.mjs";
+import * as applications from "./module/applications/_module.mjs"
+import * as documents from "./module/documents/_module.mjs"
+import * as models from "./module/models/_module.mjs"
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 
-const DEVELOPMENT_MODE = true;
+const DEVELOPMENT_MODE = true
 
-Hooks.once("init", function() {
-  console.log("Initializing Rafales Game System");
+Hooks.once("init", function () {
+  console.log("Initializing Rafales Game System")
 
   // Configuration
-  globalThis.rafales = game.system;
-  game.system.CONST = SYSTEM;
-  CONFIG.SYSTEM = SYSTEM;
+  globalThis.rafales = game.system
+  game.system.CONST = SYSTEM
+  CONFIG.SYSTEM = SYSTEM
 
   // Actor document configuration
-  CONFIG.Actor.documentClass = documents.RafalesActor;
+  CONFIG.Actor.documentClass = documents.RafalesActor
   CONFIG.Actor.dataModels = {
     horde: models.RafalesHorde,
-    hordier: models.RafalesHordier
-  };
+    hordier: models.RafalesHordier,
+  }
 
   // Actor sheet configuration
-  Actors.unregisterSheet("core", ActorSheet);
+  Actors.unregisterSheet("core", ActorSheet)
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordeSheet, {
     types: ["horde"],
-    makeDefault: true
-  });
+    makeDefault: true,
+  })
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordierSheet, {
     types: ["hordier"],
-    makeDefault: true
-  });
+    makeDefault: true,
+  })
 
-  Handlebars.registerHelper("numeroLien", function(value) {
-    return parseInt(value) + 1;
-  });
-});
+  game.settings.register("rafales", "oneshot", {
+    name: "RAFALES.Setting.Oneshot.label",
+    hint: "RAFALES.Setting.Oneshot.hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+  })
+
+  Handlebars.registerHelper("numeroLien", function (value) {
+    return parseInt(value) + 1
+  })
+})

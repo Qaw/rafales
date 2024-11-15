@@ -6,7 +6,7 @@
     </div>
     <div class="cohesion">
         <div class="cohesion-name" data-tooltip="{{localize 'RAFALES.Tooltip.increaseDecreaseStat'}}">{{localize "RAFALES.Label.Majuscule.cohesion"}}</div>
-        <img class="cohesion-img" src="/systems/rafales/assets/cran_{{cohesion.valeur}}.webp" data-tooltip="{{cohesion.valeur}}" />
+        <img class="cohesion-img" src="/systems/rafales/assets/cran_{{cohesionIndice}}.webp" data-tooltip="{{cohesion.valeur}}" />
         <div class="cohesion-input">
             {{#if isGM}}{{formInput systemFields.statistiques.fields.cohesion.fields.valeur value=system.statistiques.cohesion.valeur disabled=false}}{{/if}}
         </div>
@@ -23,7 +23,7 @@
 
     <div class="vitalite">
         <div class="vitalite-name" data-tooltip="{{localize 'RAFALES.Tooltip.increaseDecreaseStat'}}">{{localize "RAFALES.Label.Majuscule.vitalite"}}</div>
-        <img class="vitalite-img" src="/systems/rafales/assets/cran_{{vitalite.valeur}}.webp" data-tooltip="{{vitalite.valeur}}" />
+        <img class="vitalite-img" src="/systems/rafales/assets/cran_{{vitaliteIndice}}.webp" data-tooltip="{{vitalite.valeur}}" />
         <div class="vitalite-input">
             {{#if isGM}}{{formInput systemFields.statistiques.fields.vitalite.fields.valeur value=system.statistiques.vitalite.valeur disabled=false}}{{/if}}
         </div>            
@@ -40,7 +40,7 @@
     </div>
     <div class="conviction">
         <div class="conviction-name" data-tooltip="{{localize 'RAFALES.Tooltip.increaseDecreaseStat'}}">{{localize "RAFALES.Label.Majuscule.conviction"}}</div>
-        <img class="conviction-img" src="/systems/rafales/assets/cran_{{conviction.valeur}}.webp" data-tooltip="{{conviction.valeur}}" />
+        <img class="conviction-img" src="/systems/rafales/assets/cran_{{convictionIndice}}.webp" data-tooltip="{{conviction.valeur}}" />
         <div class="conviction-input">
             {{#if isGM}}{{formInput systemFields.statistiques.fields.conviction.fields.valeur value=system.statistiques.conviction.valeur disabled=false}}{{/if}}
         </div>
