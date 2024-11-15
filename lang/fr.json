@@ -54,7 +54,22 @@
       "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?"
     },
     "Tooltip": {
-      "createLink": "Créer un lien"
+      "createLink": "Créer un lien",
+      "increaseDecreaseStat": "Clic gauche pour diminuer de 1, clic droit pour augmenter de 1"
+    },
+    "Label": {
+      "numeroHorde": "N° de Horde",
+      "Majuscule": {
+        "cohesion": "COHESION",
+        "vitalite": "VITALITE",
+        "conviction": "CONVICTION",
+        "connaissance": "CONNAISSANCE",
+        "espoir": "ESPOIR",
+        "vif": "VIF"
+      },
+      "restoreCohesion": "Restaurer la Cohésion",
+      "restoreVitalite": "Restaurer la Vitalité",
+      "restoreConviction": "Restaurer la Conviction"
     }
   }
 }
