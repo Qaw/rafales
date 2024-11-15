@@ -1,6 +1,38 @@
 /* ----------------------------------------- */
 /*  Font Faces                               */
 /* ----------------------------------------- */
+@font-face {
+  font-family: "agaramondpro";
+  src: url("./fonts/agaramondpro-regular.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("./fonts/agaramondpro-bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("./fonts/agaramondpro-italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("./fonts/agaramondpro-semibold.ttf") format("truetype");
+  font-weight: 600;
+  /* Semibold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "bakatoo";
+  src: url("./fonts/bakatoo.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "zarielrafale";
+  src: url("./fonts/zarielrafale-regular.ttf") format("truetype");
+  font-style: normal;
+}
 /* ----------------------------------------- */
 /*  CSS Variables                            */
 /* ----------------------------------------- */
@@ -18,12 +50,6 @@
   --color-accent: #cf9356;
   --color-link-text: #f36739;
   --color-border-highlight: var(--color-accent);
-  /*
-  --font-h1: "AwerySmallcaps", serif;
-  --font-body: "Constantia", serif;
-  --font-quote: "CaslonAntique", serif;
-  --font-sans: "Signika", sans-serif;
-  --font-size-15: 0.9375rem;*/
 }
 /* ----------------------------------------- */
 /*  Application V2 Styles                    */
@@ -68,7 +94,7 @@
 .rafales .horde {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: 1fr 1fr 0.6fr 1fr 1fr 0.6fr;
   padding-top: 20px;
 }
 .rafales .horde .nom {
@@ -79,9 +105,12 @@
   margin-left: 20px;
 }
 .rafales .horde .nom .nom-label {
-  font-size: 1.2rem;
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 1.8rem;
 }
 .rafales .horde .nom input {
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 3rem;
   width: 100px;
   text-align: center;
   border: none;
@@ -96,8 +125,10 @@
   justify-content: center;
 }
 .rafales .horde .cohesion .cohesion-name {
-  font-size: 1.5rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 .rafales .horde .cohesion .cohesion-img {
   width: 300px;
@@ -124,10 +155,15 @@
   justify-content: center;
 }
 .rafales .horde .connaissance .connaissance-name {
-  font-size: 1.1rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
-.rafales .horde .connaissance .connaissance-img {
+.rafales .horde .connaissance .connaissance-input {
+  margin-left: 30px;
+}
+.rafales .horde .connaissance .connaissance-input .connaissance-img {
   width: 30px;
   border: none;
   align-items: center;
@@ -141,8 +177,10 @@
   justify-content: center;
 }
 .rafales .horde .vitalite .vitalite-name {
-  font-size: 1.5rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 .rafales .horde .vitalite .vitalite-img {
   width: 300px;
@@ -169,10 +207,15 @@
   justify-content: center;
 }
 .rafales .horde .espoir .espoir-name {
-  font-size: 1.1rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
-.rafales .horde .espoir .espoir-img {
+.rafales .horde .espoir .espoir-input {
+  margin-left: 30px;
+}
+.rafales .horde .espoir .espoir-input .espoir-img {
   width: 30px;
   border: none;
   align-items: center;
@@ -186,8 +229,10 @@
   justify-content: center;
 }
 .rafales .horde .conviction .conviction-name {
-  font-size: 1.5rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 .rafales .horde .conviction .conviction-img {
   width: 300px;
@@ -214,10 +259,15 @@
   justify-content: center;
 }
 .rafales .horde .vif .vif-name {
-  font-size: 1.1rem;
+  font-family: "zarielrafale", Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
-.rafales .horde .vif .vif-img {
+.rafales .horde .vif .vif-input {
+  margin-left: 35px;
+}
+.rafales .horde .vif .vif-input .vif-img {
   width: 30px;
   border: none;
   align-items: center;
@@ -238,6 +288,31 @@
 .rafales .horde .cache {
   visibility: hidden;
 }
+.rafales .hordier .nom,
+.rafales .hordier .horde-nom {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 20px;
+  gap: 10px;
+}
+.rafales .hordier .nom input {
+  width: 200px;
+}
+.rafales .hordier .horde-nom input {
+  width: 70px;
+}
 .rafales .hordier .lien {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 0 0;
+}
+.rafales .hordier .lien .lien-label {
+  width: 150px;
+}
+.rafales .hordier .lien .lien-nom {
+  width: 250px;
+}
+.rafales .hordier .lien .lien-lien {
+  width: 100%;
 }

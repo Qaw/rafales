@@ -1,0 +1,35 @@
+/* ----------------------------------------- */
+/*  Font Faces                               */
+/* ----------------------------------------- */
+@font-face {
+  font-family: "agaramondpro";
+  src: url("fonts/agaramondpro-regular.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("fonts/agaramondpro-bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("fonts/agaramondpro-italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "agaramondpro";
+  src: url("fonts/agaramondpro-semibold.ttf") format("truetype");
+  font-weight: 600;
+  /* Semibold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "bakatoo";
+  src: url("fonts/bakatoo.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "zarielrafale";
+  src: url("fonts/zarielrafale-regular.ttf") format("truetype");
+  font-style: normal;
+}

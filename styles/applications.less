@@ -1,0 +1,51 @@
+/* ----------------------------------------- */
+/*  Application V2 Styles                    */
+/* ----------------------------------------- */
+
+.rafales.application {
+  --color-header-background: transparent;
+  --color-form-label: var(--color-h1);
+  --color-form-label-hover: var(--color-primary);
+  --color-form-hint: var(--color-tertiary);
+  --color-form-hint-hover: var(--color-secondary);
+  background: var(--color-cool-5);
+  background-image: url("./ui/fond.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  gap: 0;
+
+  .window-header {
+    //border-bottom: none;
+    .window-title {
+      // font-family: var(--font-h1);
+      color: var(--color-text);
+    }
+    .header-control {
+      color: var(--color-text);
+    }
+  }
+
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border: none;
+    object-fit: cover;
+    object-position: top right;
+  }
+
+  .window-content {
+    padding: 0;
+  }
+
+  // Standard Headers
+  h1,
+  h2,
+  h3,
+  h4 {
+    //font-family: var(--font-h1);
+    color: var(--color-h1);
+    border: none;
+  }
+}
