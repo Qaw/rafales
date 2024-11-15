@@ -9,4 +9,4 @@ node_modules/
 packs/
 
 # Less
-styles/*.less
+styles/*.css
