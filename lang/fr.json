@@ -59,6 +59,10 @@
     },
     "Label": {
       "numeroHorde": "N° de Horde",
+      "nom": "Nom",
+      "biographie": "Biographie",
+      "liens": "Liens",
+      "notes": "Notes",
       "Majuscule": {
         "cohesion": "COHESION",
         "vitalite": "VITALITE",
@@ -70,6 +74,7 @@
       "restoreCohesion": "Restaurer la Cohésion",
       "restoreVitalite": "Restaurer la Vitalité",
       "restoreConviction": "Restaurer la Conviction"
-    }
+    },
+    "ToggleSheet": "Changer de mode"
   }
 }

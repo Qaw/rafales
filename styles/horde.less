@@ -4,6 +4,10 @@
   grid-template-rows: 1fr 1fr 0.6fr 1fr 1fr 0.6fr;
   padding-top: 20px;
 
+  input[type="checkbox"]::before {
+    color: #671006;
+  }
+
   .nom {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
@@ -38,8 +42,8 @@
       letter-spacing: 2px;
     }
     .cohesion-img {
-      width: 300px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
     }
     .cohesion-input {
       display: flex;
@@ -91,8 +95,9 @@
       letter-spacing: 2px;
     }
     .vitalite-img {
-      width: 300px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
+      transform: rotate(-90deg);
     }
     .vitalite-input {
       display: flex;
@@ -145,8 +150,9 @@
       letter-spacing: 2px;
     }
     .conviction-img {
-      width: 300px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
+      transform: rotate(90deg);
     }
     .conviction-input {
       display: flex;
@@ -188,8 +194,8 @@
   .cohesion-img,
   .vitalite-img,
   .conviction-img {
-    width: 300px;
-    height: 200px;
+    //width: 300px;
+    //height: 200px;
     border: none;
   }
 

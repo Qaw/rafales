@@ -1,11 +1,11 @@
-const { HandlebarsApplicationMixin } = foundry.applications.api
+const { HandlebarsApplicationMixin } = foundry.applications.api;
 
 export default class RafalesActorSheet extends HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
   /**
    * Different sheet modes.
    * @enum {number}
    */
-  static SHEET_MODES = { EDIT: 0, PLAY: 1 }
+  static SHEET_MODES = { EDIT: 0, PLAY: 1 };
 
   /** @override */
   static DEFAULT_OPTIONS = {
@@ -13,25 +13,25 @@ export default class RafalesActorSheet extends HandlebarsApplicationMixin(foundr
     position: { width: 500, height: 500 },
 
     form: {
-      submitOnChange: true,
+      submitOnChange: true
     },
     window: {
-      resizable: true,
-    },
-  }
+      resizable: true
+    }
+  };
 
   /**
    * The current sheet mode.
    * @type {number}
    */
-  _sheetMode = this.constructor.SHEET_MODES.PLAY
+  _sheetMode = this.constructor.SHEET_MODES.PLAY;
 
   /**
    * Is the sheet currently in 'Play' mode?
    * @type {boolean}
    */
   get isPlayMode() {
-    return this._sheetMode === this.constructor.SHEET_MODES.PLAY
+    return this._sheetMode === this.constructor.SHEET_MODES.PLAY;
   }
 
   /**
@@ -39,7 +39,7 @@ export default class RafalesActorSheet extends HandlebarsApplicationMixin(foundr
    * @type {boolean}
    */
   get isEditMode() {
-    return this._sheetMode === this.constructor.SHEET_MODES.EDIT
+    return this._sheetMode === this.constructor.SHEET_MODES.EDIT;
   }
 
   /** @override */
@@ -52,8 +52,8 @@ export default class RafalesActorSheet extends HandlebarsApplicationMixin(foundr
       source: this.document.toObject(),
       isEditMode: this.isEditMode,
       isPlayMode: this.isPlayMode,
-      isEditable: this.isEditable,
-    }
-    return context
+      isEditable: this.isEditable
+    };
+    return context;
   }
 }
