@@ -369,3 +369,14 @@
 .rafales .hordier prose-mirror {
   font-family: "zarielrafale", Arial, sans-serif;
 }
+.rafales .adversite-content {
+  display: flex;
+  flex-direction: column;
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 1.8rem;
+  color: #671006;
+  text-align: center;
+}
+.rafales .adversite-content div {
+  height: 40px;
+}

@@ -81,7 +81,19 @@
       "Oneshot": {
         "label": "Mode OneShot",
         "hint": "Activez ce mode OneShot pour avoir les statistiques vitales de 0 à 5 au lieu de 0 à 20."
+      },
+      "Adversity": {
+        "label": "Adversité",
+        "hint": "Niveau d'adversité"
+      },
+      "HordeId": {
+        "label": "Id de la Horde de référence",
+        "hint": "Id de la horde qui sera utilisée pour les statistiques de base"
       }
+    },
+    "Adversity": {
+      "title": "Adversité",
+      "hint": "Niveau d'adversité"
     }
   }
 }

@@ -27,6 +27,13 @@ Hooks.once("init", function () {
   globalThis.rafales = game.system
   game.system.CONST = SYSTEM
 
+  // Expose the system API
+  game.system.api = {
+    applications,
+    models,
+    documents,
+  }
+
   // Actor document configuration
   CONFIG.Actor.documentClass = documents.RafalesActor
   CONFIG.Actor.dataModels = {
@@ -49,6 +56,26 @@ Hooks.once("init", function () {
     requiresReload: true,
   })
 
+  game.settings.register("rafales", "adversity", {
+    name: "RAFALES.Setting.Adversity.label",
+    hint: "RAFALES.Setting.Adversity.hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    default: 0,
+    requiresReload: false,
+  })
+
+  game.settings.register("rafales", "hordeId", {
+    name: "RAFALES.Setting.HordeId.label",
+    hint: "RAFALES.Setting.HordeId.hint",
+    scope: "world",
+    config: true,
+    type: String,
+    default: undefined,
+    requiresReload: true,
+  })
+
   Handlebars.registerHelper("numeroLien", function (value) {
     return parseInt(value) + 1
   })
@@ -58,6 +85,9 @@ Hooks.once("init", function () {
 
 Hooks.once("ready", function () {
   console.info("RAFALES | Ready")
+
+  game.system.applicationAdversity = new applications.RafalesAdversity()
+  if (game.user.isGM) game.system.applicationAdversity.render(true)
 
   if (!SYSTEM.DEV_MODE) {
     registerWorldCount("rafales")
@@ -96,3 +126,12 @@ function registerWorldCount(registerKey) {
     })
   }
 }
+
+Hooks.on("updateSetting", async (setting, update, options, id) => {
+  if (setting.key === "rafales.adversity") {
+    game.system.applicationAdversity.render(true)
+  }
+  if (setting.key === "rafales.hordeId") {
+    game.system.applicationAdversity.render(true)
+  }
+})
