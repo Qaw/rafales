@@ -1,6 +1,7 @@
-import * as HORDE from "./horde.mjs";
+import * as HORDE from "./horde.mjs"
 
-export const SYSTEM_ID = "rafales";
+export const SYSTEM_ID = "rafales"
+export const DEV_MODE = true
 
 /**
  * Include all constant definitions within the SYSTEM global export
@@ -8,5 +9,6 @@ export const SYSTEM_ID = "rafales";
  */
 export const SYSTEM = {
   id: SYSTEM_ID,
-  STATISTIQUES: HORDE.STATISTIQUES
-};
+  DEV_MODE,
+  STATISTIQUES: HORDE.STATISTIQUES,
+}
