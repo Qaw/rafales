@@ -14,6 +14,8 @@ import * as applications from "./module/applications/_module.mjs"
 import * as documents from "./module/documents/_module.mjs"
 import * as models from "./module/models/_module.mjs"
 
+import { initControlButtons } from "./module/control-buttons.mjs"
+
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
@@ -79,6 +81,8 @@ Hooks.once("init", function () {
   Handlebars.registerHelper("numeroLien", function (value) {
     return parseInt(value) + 1
   })
+
+  initControlButtons()
 
   console.info("RAFALES | System Initialized")
 })

@@ -380,3 +380,15 @@
 .rafales .adversite-content div {
   height: 40px;
 }
+i.rafales {
+  width: 36px;
+  height: 36px;
+  background-image: url("./ui/menu.webp");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+  filter: grayscale(1);
+  transition: 0.3s;
+}
