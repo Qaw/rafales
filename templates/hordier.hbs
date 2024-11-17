@@ -2,7 +2,7 @@
 <div class="hordier">
   <div class="hordier-header">
     <div class="hordier-header-gauche">
-      <div class="nom">
+      <div class="nom" {{#if isPlayMode}}data-action="roll"{{/if}}>
         <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
         {{formInput fields.name value=source.name disabled=isPlayMode}}
       </div>

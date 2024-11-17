@@ -16,6 +16,7 @@ export default class HordierSheet extends RafalesActorSheet {
       toggleSheet: HordierSheet.#onToggleSheet,
       createLink: HordierSheet.#onCreateLink,
       deleteLink: HordierSheet.#onDeleteLink,
+      roll: HordierSheet.#onRoll,
     },
   }
 
@@ -66,7 +67,7 @@ export default class HordierSheet extends RafalesActorSheet {
   /**
    * Handle changing a Document's image.
    *
-   * @this TenebrisCharacterSheet
+   * @this HordierSheet
    * @param {PointerEvent} event   The originating click event
    * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
    * @returns {Promise}
@@ -118,5 +119,9 @@ export default class HordierSheet extends RafalesActorSheet {
     let liens = this.actor.system.liens
     liens.splice(index, 1)
     this.actor.update({ "system.liens": liens })
+  }
+
+  static #onRoll(event, target) {
+    this.actor.roll()
   }
 }

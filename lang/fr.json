@@ -94,6 +94,12 @@
     "Adversity": {
       "title": "Adversité",
       "hint": "Niveau d'adversité"
+    },
+    "Roll": {
+      "title": "Lancer de dés",
+      "dangerosite": "Difficulté",
+      "dialogTitle": "Jet de dé",
+      "dialogButton": "Lancer le dé"
     }
   }
 }

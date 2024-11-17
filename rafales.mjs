@@ -48,6 +48,9 @@ Hooks.once("init", function () {
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordeSheet, { types: ["horde"], makeDefault: true })
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordierSheet, { types: ["hordier"], makeDefault: true })
 
+  // Dice system configuration
+  CONFIG.Dice.rolls.push(documents.RafalesRoll)
+
   game.settings.register("rafales", "oneshot", {
     name: "RAFALES.Setting.Oneshot.label",
     hint: "RAFALES.Setting.Oneshot.hint",
@@ -75,7 +78,7 @@ Hooks.once("init", function () {
     config: true,
     type: String,
     default: undefined,
-    requiresReload: true,
+    requiresReload: false,
   })
 
   Handlebars.registerHelper("numeroLien", function (value) {

@@ -1,3 +1,5 @@
+import RafalesRoll from "./roll.mjs"
+
 export default class RafalesActor extends Actor {
   constructor(data, context) {
     super(data, context)
@@ -10,5 +12,17 @@ export default class RafalesActor extends Actor {
         data.system.statistiques.conviction.valeur = 5
       }
     }
+  }
+
+  async roll() {
+    let roll = await RafalesRoll.prompt({
+      actorId: this.id,
+      actorName: this.name,
+      actorImage: this.img,
+    })
+
+    if (!roll) return null
+
+    await roll.toMessage({}, {})
   }
 }

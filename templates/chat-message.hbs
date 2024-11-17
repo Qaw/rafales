@@ -1,0 +1,23 @@
+{{log "chat-message" this}}
+<div class="{{cssClass}}">
+  <div class="intro-chat">
+    {{#if (ne actingCharImg "icons/svg/mystery-man.svg")}}
+      <div class="intro-img">
+        <img src="{{actingCharImg}}" data-tooltip="{{actingCharName}}" />
+      </div>
+    {{else}}
+      <div></div>
+    {{/if}}
+    <div class="intro-right">
+      <p class="introText">{{{introText}}}</p>
+    </div>
+  </div>
+
+  {{#unless isPrivate}}
+    <div class="dice-result">
+      <h4 class="dice-total">{{total}}</h4>
+      <div class="dice-formula">{{formula}}</div>
+      {{{tooltip}}}
+    </div>
+  {{/unless}}
+</div>
