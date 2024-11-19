@@ -8,7 +8,10 @@ const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api
  */
 export default class RafalesAdversity extends HandlebarsApplicationMixin(ApplicationV2) {
   // Id de l'horde de référence
-  #hordeId
+  hordeId = game.settings.get("rafales", "hordeId")
+
+  // Adversité
+  adversity = game.settings.get("rafales", "adversity")
 
   /** @inheritDoc */
   static DEFAULT_OPTIONS = {
@@ -32,6 +35,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
     actions: {
       increaseAdversity: RafalesAdversity.#increaseAdversity,
       decreaseAdversity: RafalesAdversity.#decreaseAdversity,
+      openHorde: RafalesAdversity.#openHorde,
     },
   }
 
@@ -82,10 +86,9 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
 
   /** @override */
   async _prepareContext(_options = {}) {
-    const hordeId = game.settings.get("rafales", "hordeId")
-    const horde = game.actors.get(hordeId)
+    const horde = game.actors.get(this.hordeId)
     return {
-      adversity: game.settings.get("rafales", "adversity"),
+      adversity: this.adversity,
       horde: horde ? horde.name : "Aucune horde",
       isGM: game.user.isGM,
     }
@@ -121,29 +124,40 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
    * @protected
    */
   async _onDrop(event) {
-    // type and uuid
+    // Type and uuid
     const data = TextEditor.getDragEventData(event)
 
     if (data.type !== "Actor") return
     const actor = await fromUuid(data.uuid)
     if (actor.type !== "horde") return
     await game.settings.set("rafales", "hordeId", actor.id)
+    this.hordeId = actor.id
   }
 
   // #region Actions
   static async #increaseAdversity(event, target) {
     console.log("increase Adversity", event, target)
-    const currentValue = game.settings.get("rafales", "adversity")
-    const newValue = currentValue + 1
+    const newValue = this.adversity + 1
+    this.adversity = newValue
     await game.settings.set("rafales", "adversity", newValue)
   }
 
   static async #decreaseAdversity(event, target) {
     console.log("decrease Adversity", event, target)
-    const currentValue = game.settings.get("rafales", "adversity")
+    const currentValue = this.adversity
     if (currentValue > 0) {
       const newValue = currentValue - 1
+      this.adversity = newValue
       await game.settings.set("rafales", "adversity", newValue)
+    }
+  }
+
+  static #openHorde(event, target) {
+    const horde = game.actors.get(this.hordeId)
+    if (horde) {
+      horde.sheet.render(true)
+    } else {
+      ui.notifications.info("Aucune horde de référence n'a été configurée.")
     }
   }
 
