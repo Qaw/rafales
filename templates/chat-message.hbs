@@ -10,7 +10,9 @@
     {{/if}}
     <div class="intro-right">
       <p class="introText">{{{introText}}}</p>
-      <p class="introTextMJ">{{{introTextMJ}}}</p>
+      {{#if (ne introTextMJ "")}}
+        <p class="introTextMJ">{{{introTextMJ}}}</p>
+      {{/if}}
     </div>
   </div>
 
@@ -24,13 +26,21 @@
     {{#if (eq resultType "failure")}}
       {{#if isPrivate}}?{{else}}{{localize "RAFALES.Roll.failure"}}{{/if}}
     {{/if}}
+    {{#if (eq resultType "criticalFailure")}}
+      {{#if isPrivate}}?{{else}}{{localize "RAFALES.Roll.criticalFailure"}}{{/if}}
+    {{/if}}
+    {{#if (and isGM oneStatLost)}}
+      <div class="adversity-spend">
+        <button class="button-spend" data-action="spendAdversity" data-stat="cohesion">{{localize "RAFALES.Horde.FIELDS.statistiques.cohesion.label"}}</button>
+        <button class="button-spend" data-action="spendAdversity" data-stat="vitalite">{{localize "RAFALES.Horde.FIELDS.statistiques.vitalite.label"}}</button>
+        <button class="button-spend" data-action="spendAdversity" data-stat="conviction">{{localize "RAFALES.Horde.FIELDS.statistiques.conviction.label"}}</button>
+      </div>
+    {{/if}}
   </div>
 
   {{#unless isPrivate}}
     <div class="dice-result">
       <h4 class="dice-total">{{total}}</h4>
-      <div class="dice-formula">{{formula}}</div>
-      {{{tooltip}}}
     </div>
   {{/unless}}
 </div>

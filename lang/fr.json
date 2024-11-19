@@ -51,7 +51,8 @@
       }
     },
     "Warning": {
-      "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?"
+      "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?",
+      "noHordeConfigured": "Aucune horde de référence n'a été configurée."
     },
     "Tooltip": {
       "createLink": "Créer un nouveau lien",

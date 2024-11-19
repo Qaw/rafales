@@ -68,11 +68,20 @@ export default class HordeSheet extends RafalesActorSheet {
     return context
   }
 
+  /**
+   * Handles changes to the connaissance statistic.
+   *
+   * This method updates the actor's "connaissance" value based on the event triggered by the user interaction.
+   *
+   * @param {Event} event - The event object triggered by the user interaction.
+   * @param {HTMLElement} target - The target element that triggered the event.
+   * @returns {Promise<void>} - A promise that resolves when the actor's "connaissance" value has been updated.
+   * @private
+   */
   static async #onchangeConnaissance(event, target) {
     const value = parseInt(event.target.dataset.value)
     const checked = event.target.checked
     const currentValue = this.actor.system.statistiques.connaissance.valeur
-    console.log("change connaissance", value, checked)
 
     // Si on coche une case vide, on change la valeur
     if (checked) return await this.actor.update({ "system.statistiques.connaissance.valeur": value })
@@ -85,11 +94,20 @@ export default class HordeSheet extends RafalesActorSheet {
     }
   }
 
+  /**
+   * Handles the change event for the espoir statistic.
+   *
+   * This method updates the actor's "espoir" value based on the checkbox state and the current value.
+   *
+   * @param {Event} event - The event object from the change event.
+   * @param {HTMLElement} target - The target element that triggered the event.
+   * @returns {Promise<void>} - A promise that resolves when the actor's "espoir" value has been updated.
+   * @private
+   */
   static async #onchangeEspoir(event, target) {
     const value = parseInt(event.target.dataset.value)
     const checked = event.target.checked
     const currentValue = this.actor.system.statistiques.connaissance.valeur
-    console.log("change espoir", value, checked)
 
     // Si on coche une case vide, on change la valeur
     if (checked) return await this.actor.update({ "system.statistiques.espoir.valeur": value })
@@ -102,11 +120,19 @@ export default class HordeSheet extends RafalesActorSheet {
     }
   }
 
+  /**
+   * Handles the change event for the "vif" statistic.
+   *
+   * This method updates the "vif" value of the actor's statistics based on the event triggered.
+   *
+   * @param {Event} event - The event object triggered by the change.
+   * @param {HTMLElement} target - The target element of the event.
+   * @returns {Promise<void>} - A promise that resolves when the actor's statistics have been updated.
+   */
   static async #onchangeVif(event, target) {
     const value = parseInt(event.target.dataset.value)
     const checked = event.target.checked
     const currentValue = this.actor.system.statistiques.connaissance.valeur
-    console.log("change vif", value, checked)
 
     // Si on coche une case vide, on change la valeur
     if (checked) return await this.actor.update({ "system.statistiques.vif.valeur": value })

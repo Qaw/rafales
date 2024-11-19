@@ -45,6 +45,10 @@ export default class RafalesRoll extends Roll {
     return this.options.difficulty
   }
 
+  get oneStatLost() {
+    return this.options.oneStatLost
+  }
+
   static async prompt(options = {}) {
     // Restreint le choix en fonction de la horde de référence si elle existe
     let choiceDangerosite
@@ -59,7 +63,7 @@ export default class RafalesRoll extends Roll {
         choiceDangerosite = { sacrificiel: "Sacrificiel" }
       } else ui.notifications.info("La horde n'a plus de statistiques vitales.")
     } else {
-      ui.notifications.info("La horde de référence n'a pas été correctement configurée.")
+      // ui.notifications.info("La horde de référence n'a pas été correctement configurée.")
       choiceDangerosite = { difficile: "Difficile", dangereux: "Dangereux", sacrificiel: "Sacrificiel" }
     }
 
@@ -104,6 +108,7 @@ export default class RafalesRoll extends Roll {
     await roll.evaluate()
 
     let resultType
+    let oneStatLost = false
 
     switch (rollData.dangerosite) {
       case "difficile":
@@ -120,6 +125,7 @@ export default class RafalesRoll extends Roll {
       case "dangereux":
         if (roll.total <= 3) {
           resultType = "failure"
+          oneStatLost = true
         } else if (roll.total === 6) {
           resultType = "success"
         } else {
@@ -141,12 +147,16 @@ export default class RafalesRoll extends Roll {
           }
         } else if (roll.total === 6) {
           resultType = "success"
-        } else resultType = "partialSuccess"
+        } else {
+          oneStatLost = true
+          resultType = "partialSuccess"
+        }
         break
     }
 
     roll.options.difficulty = rollData.dangerosite
     roll.options.resultType = resultType
+    roll.options.oneStatLost = oneStatLost
     roll.options.introText = roll._createIntroText()
     roll.options.introTextMJ = roll._createIntroTextMJ()
 
@@ -163,18 +173,21 @@ export default class RafalesRoll extends Roll {
   }
 
   _createIntroTextMJ() {
-    let text
+    let text = ""
     if (this.difficulty === "difficile" && this.resultType === "failure") {
-      text = "L'adversité augmente."
+      text = "L'adversité augmente"
     }
     if (this.difficulty === "dangereux" && this.resultType === "partialSuccess") {
-      text = "L'adversité augmente."
+      text = "L'adversité augmente"
+    }
+    if (this.difficulty === "dangereux" && this.resultType === "failure") {
+      text = "Une statistique vitale diminue"
     }
     if (this.difficulty === "sacrificiel" && this.resultType === "partialSuccess") {
-      text = "Une statistique vitale diminue."
+      text = "Une statistique vitale diminue"
     }
     if (this.difficulty === "sacrificiel" && this.resultType === "failure") {
-      text = "Toutes les statistiques <br> vitales diminuent."
+      text = "Toutes les statistiques <br> vitales diminuent"
     }
     return text
   }
@@ -196,6 +209,7 @@ export default class RafalesRoll extends Roll {
       isFailure: this.isFailure,
       isSuccess: this.isSuccess,
       isPartialSuccess: this.isPartialSuccess,
+      oneStatLost: this.oneStatLost,
       actorId: this.actorId,
       actingCharName: this.actorName,
       actingCharImg: this.actorImage,
@@ -224,7 +238,9 @@ export default class RafalesRoll extends Roll {
         isSuccess: this.resultType === "success",
         isPartialSuccess: this.resultType === "partialSuccess",
         isFailure: this.resultType === "failure",
+        oneStatLost: this.oneStatLost,
         introText: this.introText,
+        introTextMJ: this.introTextMJ,
         actingCharName: this.actorName,
         actingCharImg: this.actorImage,
         ...messageData,

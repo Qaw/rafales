@@ -90,7 +90,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
     const horde = game.actors.get(this.hordeId)
     return {
       adversity: this.adversity,
-      horde: horde ? horde.name : "Aucune horde",
+      horde: horde ? horde.name : "Aucune",
       isGM: game.user.isGM,
       mustSpend: this.adversity === 2,
     }
@@ -137,15 +137,32 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
   }
 
   // #region Actions
+  /**
+   * Increases the adversity value by 1 and updates the game settings.
+   *
+   * @param {Event} event - The event that triggered the increase.
+   * @param {Object} target - The target object associated with the event.
+   * @returns {Promise<void>} A promise that resolves when the adversity value has been updated in the game settings.
+   * @private
+   */
   static async #increaseAdversity(event, target) {
-    console.log("increase Adversity", event, target)
+    console.info("Adversité augmentée de 1")
     const newValue = this.adversity + 1
     this.adversity = newValue
     await game.settings.set("rafales", "adversity", newValue)
   }
 
+  /**
+   * Decreases the adversity value by 1 if it is greater than 0.
+   * Updates the game settings with the new adversity value.
+   *
+   * @param {Event} event - The event that triggered the decrease.
+   * @param {Object} target - The target object associated with the event.
+   * @returns {Promise<void>} - A promise that resolves when the adversity value has been updated.
+   * @private
+   */
   static async #decreaseAdversity(event, target) {
-    console.log("decrease Adversity", event, target)
+    console.info("Adversité diminuée de 1")
     const currentValue = this.adversity
     if (currentValue > 0) {
       const newValue = currentValue - 1
@@ -154,20 +171,35 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
     }
   }
 
+  /**
+   * Opens the horde sheet for the specified event and target.
+   * If the horde is found, its sheet is rendered. Otherwise, a notification is shown.
+   *
+   * @param {Event} event - The event that triggered the opening of the horde.
+   * @param {Object} target - The target object associated with the event.
+   * @private
+   */
   static #openHorde(event, target) {
     const horde = game.actors.get(this.hordeId)
     if (horde) {
       horde.sheet.render(true)
     } else {
-      ui.notifications.info("Aucune horde de référence n'a été configurée.")
+      ui.notifications.info(game.i18n.localize("RAFALES.Warning.noHordeConfigured"))
     }
   }
 
+  /**
+   * Handles the spending of adversity points for a horde.
+   *
+   * @param {Event} event - The event that triggered this function.
+   * @param {HTMLElement} target - The target element that contains the dataset with the stat to be updated.
+   * @private
+   */
   static #spendAdversity(event, target) {
     event.preventDefault()
     const horde = game.actors.get(this.hordeId)
     if (!horde) {
-      ui.notifications.info("Aucune horde de référence n'a été configurée.")
+      ui.notifications.info(game.i18n.localize("RAFALES.Warning.noHordeConfigured"))
       return
     }
     if (this.adversity === 2) {

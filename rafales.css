@@ -51,9 +51,10 @@
   --color-link-text: #f36739;
   --color-border-highlight: var(--color-accent);
 }
-/* ----------------------------------------- */
-/*  Application V2 Styles                    */
-/* ----------------------------------------- */
+.chat-message.message {
+  background: var(--color-cool-5);
+  background-image: url("./ui/fond.webp");
+}
 .rafales.application {
   --color-header-background: transparent;
   --color-form-label: var(--color-h1);
@@ -452,10 +453,11 @@
   border-radius: 20px;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 .rafales.dice-roll .intro-chat .intro-img {
   padding: 5px;
-  width: 80px;
+  width: 60px;
   align-self: center;
 }
 .rafales.dice-roll .intro-chat .intro-right {
@@ -466,7 +468,15 @@
   font-size: 1.4rem;
   color: #671006;
   width: 210px;
-  margin-left: 20px;
+  margin-left: 5px;
+}
+.rafales.dice-roll .intro-chat .intro-right .introText {
+  margin: 5px 0 0 0;
+  text-align: center;
+}
+.rafales.dice-roll .intro-chat .intro-right .introTextMJ {
+  margin: 0;
+  text-align: center;
 }
 .rafales.dice-roll .result {
   display: flex;
@@ -476,6 +486,14 @@
   font-family: "agaramondpro", Arial, sans-serif;
   font-size: 1.4rem;
   color: #671006;
+}
+.rafales.dice-roll .result .adversity-spend button {
+  margin: 3px 0 2px 0;
+  color: #671006;
+}
+.rafales.dice-roll .dice-result {
+  padding-top: 10px;
+  width: 100%;
 }
 i.rafales {
   width: 36px;

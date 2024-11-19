@@ -144,3 +144,34 @@ Hooks.on("updateSetting", async (setting, update, options, id) => {
     game.system.applicationAdversity.render(true)
   }
 })
+
+Hooks.on("renderChatMessage", (message, html, data) => {
+  if (game.user.isGM) {
+    html.find(".button-spend").click((event) => {
+      const hordeId = game.settings.get("rafales", "hordeId")
+      const horde = game.actors.get(hordeId)
+      if (!horde) {
+        ui.notifications.info(game.i18n.localize("RAFALES.Warning.noHordeConfigured"))
+        return
+      }
+
+      const btn = $(event.currentTarget)
+      const action = btn.data("action")
+      const stat = btn.data("stat")
+
+      switch (stat) {
+        case "cohesion":
+          horde.update({ "system.statistiques.cohesion.valeur": horde.system.statistiques.cohesion.valeur - 1 })
+          break
+        case "vitalite":
+          horde.update({ "system.statistiques.vitalite.valeur": horde.system.statistiques.vitalite.valeur - 1 })
+          break
+        case "conviction":
+          horde.update({ "system.statistiques.conviction.valeur": horde.system.statistiques.conviction.valeur - 1 })
+          break
+        default:
+          break
+      }
+    })
+  }
+})
