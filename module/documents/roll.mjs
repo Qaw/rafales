@@ -37,6 +37,14 @@ export default class RafalesRoll extends Roll {
     return this.options.introText
   }
 
+  get introTextMJ() {
+    return this.options.introTextMJ
+  }
+
+  get difficulty() {
+    return this.options.difficulty
+  }
+
   static async prompt(options = {}) {
     // Restreint le choix en fonction de la horde de référence si elle existe
     let choiceDangerosite
@@ -74,6 +82,7 @@ export default class RafalesRoll extends Roll {
               if (input.name) obj[input.name] = input.value
               return obj
             }, {})
+            return output
           },
         },
       ],
@@ -96,14 +105,50 @@ export default class RafalesRoll extends Roll {
 
     let resultType
 
-    if (roll.total <= 3) {
-      resultType = "failure"
-    } else if (roll.total === 6) {
-      resultType = "success"
-    } else resultType = "partialSuccess"
+    switch (rollData.dangerosite) {
+      case "difficile":
+        if (roll.total <= 3) {
+          resultType = "failure"
+          const currentAdversity = game.settings.get("rafales", "adversity")
+          game.settings.set("rafales", "adversity", currentAdversity + 1)
+        } else if (roll.total === 6) {
+          resultType = "success"
+        } else {
+          resultType = "partialSuccess"
+        }
+        break
+      case "dangereux":
+        if (roll.total <= 3) {
+          resultType = "failure"
+        } else if (roll.total === 6) {
+          resultType = "success"
+        } else {
+          resultType = "partialSuccess"
+          const currentAdversity = game.settings.get("rafales", "adversity")
+          game.settings.set("rafales", "adversity", currentAdversity + 1)
+        }
+        break
+      case "sacrificiel":
+        if (roll.total <= 3) {
+          resultType = "failure"
+          let horde = await game.actors.get(game.settings.get("rafales", "hordeId"))
+          if (horde) {
+            await horde.update({
+              "system.statistiques.cohesion.valeur": horde.system.statistiques.cohesion.valeur - 1,
+              "system.statistiques.conviction.valeur": horde.system.statistiques.conviction.valeur - 1,
+              "system.statistiques.vitalite.valeur": horde.system.statistiques.vitalite.valeur - 1,
+            })
+          }
+        } else if (roll.total === 6) {
+          resultType = "success"
+        } else resultType = "partialSuccess"
+        break
+    }
 
+    roll.options.difficulty = rollData.dangerosite
     roll.options.resultType = resultType
     roll.options.introText = roll._createIntroText()
+    roll.options.introTextMJ = roll._createIntroTextMJ()
 
     return roll
   }
@@ -114,10 +159,23 @@ export default class RafalesRoll extends Roll {
    * @returns {string} The formatted introductory text for the roll.
    */
   _createIntroText() {
+    return game.i18n.format("RAFALES.Roll.introText", { difficulty: this.difficulty })
+  }
+
+  _createIntroTextMJ() {
     let text
-
-    text = "Jet de dé"
-
+    if (this.difficulty === "difficile" && this.resultType === "failure") {
+      text = "L'adversité augmente."
+    }
+    if (this.difficulty === "dangereux" && this.resultType === "partialSuccess") {
+      text = "L'adversité augmente."
+    }
+    if (this.difficulty === "sacrificiel" && this.resultType === "partialSuccess") {
+      text = "Une statistique vitale diminue."
+    }
+    if (this.difficulty === "sacrificiel" && this.resultType === "failure") {
+      text = "Toutes les statistiques <br> vitales diminuent."
+    }
     return text
   }
 
@@ -142,6 +200,8 @@ export default class RafalesRoll extends Roll {
       actingCharName: this.actorName,
       actingCharImg: this.actorImage,
       introText: this.introText,
+      introTextMJ: this.introTextMJ,
+      resultType: this.resultType,
       isPrivate: isPrivate,
     }
     cardData.cssClass = cardData.css.join(" ")

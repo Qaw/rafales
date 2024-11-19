@@ -10,7 +10,20 @@
     {{/if}}
     <div class="intro-right">
       <p class="introText">{{{introText}}}</p>
+      <p class="introTextMJ">{{{introTextMJ}}}</p>
     </div>
+  </div>
+
+  <div class="result">
+    {{#if (eq resultType "success")}}
+      {{#if isPrivate}}?{{else}}{{localize "RAFALES.Roll.success"}}{{/if}}
+    {{/if}}
+    {{#if (eq resultType "partialSuccess")}}
+      {{#if isPrivate}}?{{else}}{{localize "RAFALES.Roll.partialSuccess"}}{{/if}}
+    {{/if}}
+    {{#if (eq resultType "failure")}}
+      {{#if isPrivate}}?{{else}}{{localize "RAFALES.Roll.failure"}}{{/if}}
+    {{/if}}
   </div>
 
   {{#unless isPrivate}}

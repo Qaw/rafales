@@ -30,7 +30,7 @@
       "FIELDS": {
         "statistiques": {
           "cohesion": {
-            "label": "Cohesion"
+            "label": "Cohésion"
           },
           "vitalite": {
             "label": "Vitalité"
@@ -99,7 +99,14 @@
       "title": "Lancer de dés",
       "dangerosite": "Difficulté",
       "dialogTitle": "Jet de dé",
-      "dialogButton": "Lancer le dé"
+      "dialogButton": "Lancer le dé",
+      "success": "Succès",
+      "failure": "Échec",
+      "partialSuccess": "Succès partiel",
+      "introText": "Lancer de dé {difficulty}",
+      "difficile": "Difficile",
+      "dangereux": "Dangereux",
+      "sacrificiel": "Sacrificiel"
     }
   }
 }

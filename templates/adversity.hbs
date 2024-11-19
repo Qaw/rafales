@@ -1,15 +1,26 @@
 {{log "adversity" this}}
 <div class="adversity">
-  <div>
-    {{localize "RAFALES.Adversity.title"}}
+  <div class="adversity-adversity">
+    <div>
+      {{localize "RAFALES.Adversity.title"}}
+    </div>
+    <div>
+      {{adversity}}
+    </div>
+    {{#if mustSpend}}
+      <div class="adversity-spend">
+        <button data-action="spendAdversity" data-stat="cohesion">{{localize "RAFALES.Horde.FIELDS.statistiques.cohesion.label"}}</button>
+        <button data-action="spendAdversity" data-stat="vitalite">{{localize "RAFALES.Horde.FIELDS.statistiques.vitalite.label"}}</button>
+        <button data-action="spendAdversity" data-stat="conviction">{{localize "RAFALES.Horde.FIELDS.statistiques.conviction.label"}}</button>
+      </div>
+    {{/if}}
   </div>
-  <div>
-    {{adversity}}
-  </div>
-  <div>
-    {{localize "RAFALES.Label.numeroHorde"}}
-  </div>
-  <div data-action="openHorde" data-tooltip="Ouvrir la fiche de Horde">
-    {{horde}}
+  <div class="adversity-horde">
+    <div>
+      {{localize "RAFALES.Label.numeroHorde"}}
+    </div>
+    <div data-action="openHorde" data-tooltip="Ouvrir la fiche de Horde">
+      {{horde}}
+    </div>
   </div>
 </div>

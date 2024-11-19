@@ -25,7 +25,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
     },
     position: {
       width: 300,
-      height: 200,
+      height: "auto",
       top: 80,
       left: 150,
     },
@@ -36,6 +36,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
       increaseAdversity: RafalesAdversity.#increaseAdversity,
       decreaseAdversity: RafalesAdversity.#decreaseAdversity,
       openHorde: RafalesAdversity.#openHorde,
+      spendAdversity: RafalesAdversity.#spendAdversity,
     },
   }
 
@@ -91,6 +92,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
       adversity: this.adversity,
       horde: horde ? horde.name : "Aucune horde",
       isGM: game.user.isGM,
+      mustSpend: this.adversity === 2,
     }
   }
 
@@ -158,6 +160,33 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
       horde.sheet.render(true)
     } else {
       ui.notifications.info("Aucune horde de référence n'a été configurée.")
+    }
+  }
+
+  static #spendAdversity(event, target) {
+    event.preventDefault()
+    const horde = game.actors.get(this.hordeId)
+    if (!horde) {
+      ui.notifications.info("Aucune horde de référence n'a été configurée.")
+      return
+    }
+    if (this.adversity === 2) {
+      this.adversity = 0
+      game.settings.set("rafales", "adversity", 0)
+      const stat = target.dataset.stat
+      switch (stat) {
+        case "cohesion":
+          horde.update({ "system.statistiques.cohesion.valeur": horde.system.statistiques.cohesion.valeur - 1 })
+          break
+        case "vitalite":
+          horde.update({ "system.statistiques.vitalite.valeur": horde.system.statistiques.vitalite.valeur - 1 })
+          break
+        case "conviction":
+          horde.update({ "system.statistiques.conviction.valeur": horde.system.statistiques.conviction.valeur - 1 })
+          break
+        default:
+          break
+      }
     }
   }
 

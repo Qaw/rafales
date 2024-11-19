@@ -377,7 +377,27 @@
   color: #671006;
   text-align: center;
 }
-.rafales .adversite-content div {
+.rafales .adversite-content .adversity-adversity div {
+  height: 40px;
+}
+.rafales .adversite-content .adversity-adversity .adversity-spend {
+  display: flex;
+  gap: 10px;
+  margin: 0 10px 0 10px;
+}
+.rafales .adversite-content .adversity-adversity .adversity-spend button {
+  font-family: "agaramondpro", Arial, sans-serif;
+  font-size: 1rem;
+  color: #671006;
+}
+.rafales .adversite-content .adversity-adversity .adversity-spend button:hover {
+  background-color: #671006;
+  color: white;
+}
+.rafales .adversite-content .adversity-horde {
+  margin-top: 10px;
+}
+.rafales .adversite-content .adversity-horde div {
   height: 40px;
 }
 .rafales .rafales-roll-dialog {
@@ -411,6 +431,51 @@
 .rafales .form-footer button:hover {
   background-color: #671006;
   color: white;
+}
+.rafales.dice-roll {
+  flex-direction: column;
+}
+.rafales.dice-roll .dice-total,
+.rafales.dice-roll .dice-formula {
+  padding-top: 5px;
+}
+.rafales.dice-roll .dice-total {
+  margin-bottom: 5px;
+}
+.rafales.dice-roll .message-header {
+  font-family: var(--font-primary);
+}
+.rafales.dice-roll img {
+  border: 0px;
+}
+.rafales.dice-roll .intro-chat {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.rafales.dice-roll .intro-chat .intro-img {
+  padding: 5px;
+  width: 80px;
+  align-self: center;
+}
+.rafales.dice-roll .intro-chat .intro-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #671006;
+  width: 210px;
+  margin-left: 20px;
+}
+.rafales.dice-roll .result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "agaramondpro", Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #671006;
 }
 i.rafales {
   width: 36px;

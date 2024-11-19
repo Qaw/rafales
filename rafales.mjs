@@ -136,9 +136,11 @@ function registerWorldCount(registerKey) {
 
 Hooks.on("updateSetting", async (setting, update, options, id) => {
   if (setting.key === "rafales.adversity") {
+    game.system.applicationAdversity.adversity = setting.value
     game.system.applicationAdversity.render(true)
   }
   if (setting.key === "rafales.hordeId") {
+    game.system.applicationAdversity.hordeId = setting.value
     game.system.applicationAdversity.render(true)
   }
 })
