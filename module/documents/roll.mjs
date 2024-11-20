@@ -114,8 +114,14 @@ export default class RafalesRoll extends Roll {
       case "difficile":
         if (roll.total <= 3) {
           resultType = "failure"
-          const currentAdversity = game.settings.get("rafales", "adversity")
-          game.settings.set("rafales", "adversity", currentAdversity + 1)
+          if (game.user.isGM) {
+            const currentAdversity = game.settings.get("rafales", "adversity")
+            game.settings.set("rafales", "adversity", currentAdversity + 1)
+          } else {
+            game.socket.emit(`system.${SYSTEM.id}`, {
+              action: "increaseAdversityByOne",
+            })
+          }
         } else if (roll.total === 6) {
           resultType = "success"
         } else {
@@ -130,8 +136,14 @@ export default class RafalesRoll extends Roll {
           resultType = "success"
         } else {
           resultType = "partialSuccess"
-          const currentAdversity = game.settings.get("rafales", "adversity")
-          game.settings.set("rafales", "adversity", currentAdversity + 1)
+          if (game.user.isGM) {
+            const currentAdversity = game.settings.get("rafales", "adversity")
+            game.settings.set("rafales", "adversity", currentAdversity + 1)
+          } else {
+            game.socket.emit(`system.${SYSTEM.id}`, {
+              action: "increaseAdversityByOne",
+            })
+          }
         }
         break
       case "sacrificiel":

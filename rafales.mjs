@@ -15,6 +15,7 @@ import * as documents from "./module/documents/_module.mjs"
 import * as models from "./module/models/_module.mjs"
 
 import { initControlButtons } from "./module/control-buttons.mjs"
+import { handleSocketEvent } from "./module/socket.mjs"
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -84,6 +85,9 @@ Hooks.once("init", function () {
   Handlebars.registerHelper("numeroLien", function (value) {
     return parseInt(value) + 1
   })
+
+  // Activate socket handler
+  game.socket.on(`system.${SYSTEM.id}`, handleSocketEvent)
 
   initControlButtons()
 

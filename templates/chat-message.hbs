@@ -10,8 +10,10 @@
     {{/if}}
     <div class="intro-right">
       <p class="introText">{{{introText}}}</p>
-      {{#if (ne introTextMJ "")}}
-        <p class="introTextMJ">{{{introTextMJ}}}</p>
+      {{#if isGM}}
+        {{#if (ne introTextMJ "")}}
+          <p class="introTextMJ">{{{introTextMJ}}}</p>
+        {{/if}}
       {{/if}}
     </div>
   </div>

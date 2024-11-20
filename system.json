@@ -42,6 +42,7 @@
     "distance": 1,
     "units": "ft"
   },
+  "socket": true,
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"],

@@ -222,5 +222,12 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
     }
   }
 
+  static increaseAdversityByOne() {
+    if (game.user.isGM) {
+      const currentAdversity = game.settings.get("rafales", "adversity")
+      game.settings.set("rafales", "adversity", currentAdversity + 1)
+    }
+  }
+
   // #endregion
 }
