@@ -75,7 +75,8 @@
       },
       "restoreCohesion": "Restaurer la Cohésion",
       "restoreVitalite": "Restaurer la Vitalité",
-      "restoreConviction": "Restaurer la Conviction"
+      "restoreConviction": "Restaurer la Conviction",
+      "statisticRestored": "La {stat} a été restaurée. <br> L'ancienne valeur était {oldValue}."
     },
     "ToggleSheet": "Changer de mode",
     "Setting": {

@@ -4,7 +4,7 @@ export default class HordeSheet extends RafalesActorSheet {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["horde"],
-    position: { height: 880, width: 700, top: 100, left: 200 },
+    position: { height: "auto", width: 700, top: 100, left: 200 },
     actions: {
       changeConnaissance: HordeSheet.#onchangeConnaissance,
       changeEspoir: HordeSheet.#onchangeEspoir,
@@ -220,7 +220,7 @@ export default class HordeSheet extends RafalesActorSheet {
         else this.actor.update({ "system.statistiques.cohesion.valeur": 20, "system.statistiques.connaissance.valeur": 0 })
         ChatMessage.create({
           user: game.user.id,
-          content: `La cohésion a été restaurée. L'ancienne valeur était ${oldValue}.`,
+          content: game.i18n.format("RAFALES.Label.statisticRestored", { stat: "cohésion", oldValue }),
         })
         break
       case "espoir":
@@ -235,7 +235,7 @@ export default class HordeSheet extends RafalesActorSheet {
         else this.actor.update({ "system.statistiques.vitalite.valeur": 20, "system.statistiques.espoir.valeur": 0 })
         ChatMessage.create({
           user: game.user.id,
-          content: `La vitalité a été restaurée. L'ancienne valeur était ${oldValue}.`,
+          content: game.i18n.format("RAFALES.Label.statisticRestored", { stat: "vitalité", oldValue }),
         })
         break
       case "vif":
@@ -250,7 +250,7 @@ export default class HordeSheet extends RafalesActorSheet {
         else this.actor.update({ "system.statistiques.conviction.valeur": 20, "system.statistiques.vif.valeur": 0 })
         ChatMessage.create({
           user: game.user.id,
-          content: `La conviction a été restaurée. L'ancienne valeur était ${oldValue}.`,
+          content: game.i18n.format("RAFALES.Label.statisticRestored", { stat: "conviction", oldValue }),
         })
         break
     }
