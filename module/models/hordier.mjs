@@ -17,6 +17,7 @@ export default class RafalesHordier extends foundry.abstract.TypeDataModel {
     schema.role = new fields.StringField({
       choices: Object.fromEntries(Object.entries(SYSTEM.ROLES).map(([key, value]) => [key, { label: `${value}` }])),
     })
+    schema.croc = new fields.BooleanField()
 
     return schema
   }
@@ -27,5 +28,9 @@ export default class RafalesHordier extends foundry.abstract.TypeDataModel {
 
   get imgRole() {
     return `systems/${SYSTEM.id}/ui/role_${this.role}.webp`
+  }
+
+  get isCroc() {
+    return this.croc
   }
 }

@@ -13,9 +13,10 @@
         <div class="hordier-role">
           <div class="role-label">{{localize "RAFALES.Label.role"}}</div>
           {{#if isPlayMode}}
-            <div class="role">{{system.displayRole}}</div>
+            <div class="role">{{system.displayRole}} {{#if isCroc}}{{croc}}{{/if}}</div>
           {{else}}
             {{formInput systemFields.role value=system.role localize=true}}
+            <div data-tooltip="Croc">{{formInput systemFields.croc value=system.croc}}</div>
           {{/if}}
         </div>
         <div class="horde-nom">

@@ -1,4 +1,6 @@
 .hordier {
+  min-width: 780px;
+
   .hordier-header {
     display: flex;
     justify-content: space-between;
@@ -50,6 +52,12 @@
           &:first-letter {
             text-transform: uppercase;
           }
+        }
+        input[type="checkbox"]:checked::after {
+          color: #671006;
+        }
+        input[type="checkbox"]:checked::before {
+          color: white;
         }
         select {
           font-family: "agaramondpro", Arial, sans-serif;

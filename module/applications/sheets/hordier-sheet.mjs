@@ -10,9 +10,8 @@ export default class HordierSheet extends RafalesActorSheet {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["hordier"],
-    position: { width: 670, height: 1000 },
+    position: { width: 780, height: 1000 },
     actions: {
-      editImage: HordierSheet.#onEditImage,
       toggleSheet: HordierSheet.#onToggleSheet,
       createLink: HordierSheet.#onCreateLink,
       deleteLink: HordierSheet.#onDeleteLink,
@@ -61,6 +60,9 @@ export default class HordierSheet extends RafalesActorSheet {
     context.isEditMode = this.isEditMode
     context.isPlayMode = this.isPlayMode
     context.isEditable = this.isEditable
+
+    context.isCroc = this.document.system.isCroc
+    context.croc = this.document.system.isCroc ? "(Croc)" : ""
     return context
   }
 

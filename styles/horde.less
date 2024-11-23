@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 0.6fr 1fr 1fr 0.6fr;
   padding-top: 20px;
+  min-width: 560px;
 
   input[type="checkbox"]::before {
     color: #671006;
@@ -59,6 +60,20 @@
       background-color: inherit;
     }
   }
+
+  .image {
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      height: 100px;
+      width: auto;
+      border: none;
+      margin-right: 10px;
+    }
+  }
+
   .connaissance {
     grid-row: 3 / 4;
     grid-column: 2 / 4;

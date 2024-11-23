@@ -11,6 +11,9 @@
             {{#if isGM}}{{formInput systemFields.statistiques.fields.cohesion.fields.valeur value=system.statistiques.cohesion.valeur disabled=false}}{{/if}}
         </div>
     </div>
+    <div class="image">
+        <img src="{{actor.img}}" data-edit="img" data-action="editImage" data-tooltip="{{actor.name}}" />
+    </div>
     <div class="connaissance">
         <div class="connaissance-name">{{localize "RAFALES.Label.Majuscule.connaissance"}}</div>
         <div class="connaissance-input">

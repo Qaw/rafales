@@ -97,6 +97,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr 0.6fr 1fr 1fr 0.6fr;
   padding-top: 20px;
+  min-width: 560px;
 }
 .rafales .horde input[type="checkbox"]::before {
   color: #671006;
@@ -150,6 +151,18 @@
   text-align: center;
   border: none;
   background-color: inherit;
+}
+.rafales .horde .image {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+  display: flex;
+  justify-content: flex-end;
+}
+.rafales .horde .image img {
+  height: 100px;
+  width: auto;
+  border: none;
+  margin-right: 10px;
 }
 .rafales .horde .connaissance {
   grid-row: 3 / 4;
@@ -293,6 +306,9 @@
 .rafales .horde .cache {
   visibility: hidden;
 }
+.rafales .hordier {
+  min-width: 780px;
+}
 .rafales .hordier .hordier-header {
   display: flex;
   justify-content: space-between;
@@ -337,6 +353,12 @@
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .hordier-role .role:first-letter {
   text-transform: uppercase;
+}
+.rafales .hordier .hordier-header .hordier-header-milieu .hordier-role input[type="checkbox"]:checked::after {
+  color: #671006;
+}
+.rafales .hordier .hordier-header .hordier-header-milieu .hordier-role input[type="checkbox"]:checked::before {
+  color: white;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .hordier-role select {
   font-family: "agaramondpro", Arial, sans-serif;

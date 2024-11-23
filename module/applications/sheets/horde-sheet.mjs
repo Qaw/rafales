@@ -4,7 +4,7 @@ export default class HordeSheet extends RafalesActorSheet {
   /** @override */
   static DEFAULT_OPTIONS = {
     classes: ["horde"],
-    position: { height: "auto", width: 700, top: 100, left: 200 },
+    position: { height: "auto", width: 560, top: 100, left: 200 },
     actions: {
       changeConnaissance: HordeSheet.#onchangeConnaissance,
       changeEspoir: HordeSheet.#onchangeEspoir,
