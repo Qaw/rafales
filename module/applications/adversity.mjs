@@ -92,7 +92,7 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
       adversity: this.adversity,
       horde: horde ? horde.name : "Aucune",
       isGM: game.user.isGM,
-      mustSpend: this.adversity === 2,
+      mustSpend: this.adversity >= 2,
     }
   }
 
@@ -202,9 +202,9 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
       ui.notifications.info(game.i18n.localize("RAFALES.Warning.noHordeConfigured"))
       return
     }
-    if (this.adversity === 2) {
-      this.adversity = 0
-      game.settings.set("rafales", "adversity", 0)
+    if (this.adversity >= 2) {
+      this.adversity -= 2
+      game.settings.set("rafales", "adversity", this.adversity)
       const stat = target.dataset.stat
       switch (stat) {
         case "cohesion":
