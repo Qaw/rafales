@@ -64,6 +64,7 @@ export default class HordeSheet extends RafalesActorSheet {
     }
 
     context.isGM = game.user.isGM
+    context.displayInfoStats = game.settings.get("rafales", "displayInfoStats")
 
     return context
   }

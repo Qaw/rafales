@@ -91,6 +91,10 @@
       "HordeId": {
         "label": "Id de la Horde de référence",
         "hint": "Id de la horde qui sera utilisée pour les statistiques de base"
+      },
+      "DisplayInfoStats": {
+        "label": "Afficher les infobulles des statistiques",
+        "hint": "Affiche les infobulles des statistiques vitales de la horde de référence"
       }
     },
     "Adversity": {

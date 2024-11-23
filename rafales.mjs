@@ -62,6 +62,16 @@ Hooks.once("init", function () {
     requiresReload: true,
   })
 
+  game.settings.register("rafales", "displayInfoStats", {
+    name: "RAFALES.Setting.DisplayInfoStats.label",
+    hint: "RAFALES.Setting.DisplayInfoStats.hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false,
+    requiresReload: false,
+  })
+
   game.settings.register("rafales", "adversity", {
     name: "RAFALES.Setting.Adversity.label",
     hint: "RAFALES.Setting.Adversity.hint",
