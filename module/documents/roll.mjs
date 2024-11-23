@@ -245,6 +245,15 @@ export default class RafalesRoll extends Roll {
    * @returns {Promise} - A promise that resolves when the message is created.
    */
   async toMessage(messageData = {}, { rollMode, create = true } = {}) {
+    let data = {
+      ...messageData,
+      flags: {
+        rafales: {
+          oneStatLost: this.oneStatLost,
+        },
+      },
+    }
+
     super.toMessage(
       {
         isSuccess: this.resultType === "success",
@@ -255,7 +264,7 @@ export default class RafalesRoll extends Roll {
         introTextMJ: this.introTextMJ,
         actingCharName: this.actorName,
         actingCharImg: this.actorImage,
-        ...messageData,
+        ...data,
       },
       { rollMode: rollMode },
     )

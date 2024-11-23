@@ -186,6 +186,14 @@ Hooks.on("renderChatMessage", (message, html, data) => {
         default:
           break
       }
+
+      // Get the message
+      const messageId = message._id
+      const newMessage = game.messages.get(messageId)
+      let roll = newMessage.rolls[0]
+      roll.options.oneStatLost = false
+
+      newMessage.update({ rolls: [JSON.stringify(roll)] })
     })
   }
 })
