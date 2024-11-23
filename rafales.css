@@ -298,7 +298,8 @@
   justify-content: space-between;
 }
 .rafales .hordier .hordier-header .hordier-header-gauche .nom,
-.rafales .hordier .hordier-header .hordier-header-gauche .horde-nom {
+.rafales .hordier .hordier-header .hordier-header-gauche .horde-nom,
+.rafales .hordier .hordier-header .hordier-header-gauche .hordier-role {
   display: flex;
   align-items: center;
   margin: 10px 0 0 20px;
@@ -313,6 +314,29 @@
   font-family: "bakatoo", Arial, sans-serif;
   font-size: 1.8rem;
   width: 400px;
+  background-color: inherit;
+  margin-left: 10px;
+}
+.rafales .hordier .hordier-header .hordier-header-gauche .hordier-role {
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 1.8rem;
+  color: #671006;
+}
+.rafales .hordier .hordier-header .hordier-header-gauche .hordier-role .role {
+  font-family: "bakatoo", Arial, sans-serif;
+  font-size: 2rem;
+  width: 200px;
+  background-color: inherit;
+  color: black;
+  margin-left: 10px;
+}
+.rafales .hordier .hordier-header .hordier-header-gauche .hordier-role .role:first-letter {
+  text-transform: uppercase;
+}
+.rafales .hordier .hordier-header .hordier-header-gauche .hordier-role select {
+  font-family: "agaramondpro", Arial, sans-serif;
+  font-size: 1.4rem;
+  width: 200px;
   background-color: inherit;
 }
 .rafales .hordier .hordier-header .hordier-header-gauche .horde-nom {

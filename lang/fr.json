@@ -26,6 +26,16 @@
         "label": "Vif"
       }
     },
+    "role": {
+      "traceur": "Le Traceur",
+      "scribe": "Le Scribe",
+      "aeromaitre": "L'Aéromaitre",
+      "geomaitre": "Le Géomaitre",
+      "prince": "Le Prince",
+      "oiselier": "L'Oiselier",
+      "eclaireur": "L'Éclaireur",
+      "pilier": "Le Pilier"
+    },
     "Horde": {
       "FIELDS": {
         "statistiques": {
@@ -62,6 +72,7 @@
     "Label": {
       "numeroHorde": "N° de Horde",
       "nom": "Nom",
+      "role": "Rôle",
       "biographie": "Biographie",
       "liens": "Liens",
       "notes": "Notes",

@@ -5,7 +5,8 @@
 
     .hordier-header-gauche {
       .nom,
-      .horde-nom {
+      .horde-nom,
+      .hordier-role {
         display: flex;
         align-items: center;
         margin: 10px 0 0 20px;
@@ -23,6 +24,29 @@
           font-family: "bakatoo", Arial, sans-serif;
           font-size: 1.8rem;
           width: 400px;
+          background-color: inherit;
+          margin-left: 10px;
+        }
+      }
+      .hordier-role {
+        font-family: "bakatoo", Arial, sans-serif;
+        font-size: 1.8rem;
+        color: #671006;
+        .role {
+          font-family: "bakatoo", Arial, sans-serif;
+          font-size: 2rem;
+          width: 200px;
+          background-color: inherit;
+          color: black;
+          margin-left: 10px;
+          &:first-letter {
+            text-transform: uppercase;
+          }
+        }
+        select {
+          font-family: "agaramondpro", Arial, sans-serif;
+          font-size: 1.4rem;
+          width: 200px;
           background-color: inherit;
         }
       }
