@@ -2,27 +2,35 @@
 <div class="hordier">
   <div class="hordier-header">
     <div class="hordier-header-gauche">
-      <div class="nom" {{#if isPlayMode}}data-action="roll"{{/if}}>
-        <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
-        {{formInput fields.name value=source.name disabled=isPlayMode}}
-      </div>
-      <div class="hordier-role">
-        <div class="role-label">{{localize "RAFALES.Label.role"}}</div>
-        {{#if isPlayMode}}
-          <div class="role">{{system.displayRole}}</div>
-        {{else}}
-          {{formInput systemFields.role value=system.role localize=true}}
-        {{/if}}
-      </div>
-      <div class="horde-nom">
-        <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
-        {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}
-        <a class="control" data-action="toggleSheet" data-tooltip="RAFALES.ToggleSheet" data-tooltip-direction="UP">
-        <i class="fa-solid fa-user-{{ifThen isPlayMode 'lock' 'pen'}}"></i></a>   
-      </div>
+       <img src="{{actor.img}}" data-edit="img" data-action="editImage" data-tooltip="{{actor.name}}" />
+    </div>
+    <div class="hordier-header-milieu">
+       <div>
+          <div class="nom" {{#if isPlayMode}}data-action="roll"{{/if}}>
+          <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
+          {{formInput fields.name value=source.name disabled=isPlayMode}}
+          </div>
+        <div class="hordier-role">
+          <div class="role-label">{{localize "RAFALES.Label.role"}}</div>
+          {{#if isPlayMode}}
+            <div class="role">{{system.displayRole}}</div>
+          {{else}}
+            {{formInput systemFields.role value=system.role localize=true}}
+          {{/if}}
+        </div>
+        <div class="horde-nom">
+          <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
+          {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}   
+        </div>
+       </div>
     </div>
     <div class="hordier-header-droite">
-      <img class="hordier-img" src="{{actor.img}}" data-edit="img" data-action="editImage" data-tooltip="{{actor.name}}" />
+      <div><img class="hordier-role-img" src="{{system.imgRole}}" /></div>
+      <div>
+        <a class="control" data-action="toggleSheet" data-tooltip="RAFALES.ToggleSheet" data-tooltip-direction="UP">
+          <i class="fa-solid fa-user-{{ifThen isPlayMode 'lock' 'pen'}}"></i>
+        </a>
+      </div>                
     </div>
   </div>
   <fieldset>

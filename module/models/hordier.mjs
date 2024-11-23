@@ -24,4 +24,8 @@ export default class RafalesHordier extends foundry.abstract.TypeDataModel {
   get displayRole() {
     return game.i18n.localize(SYSTEM.ROLES[this.role])
   }
+
+  get imgRole() {
+    return `systems/${SYSTEM.id}/ui/role_${this.role}.webp`
+  }
 }
