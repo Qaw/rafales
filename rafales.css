@@ -424,6 +424,9 @@
 .rafales .hordier prose-mirror {
   font-family: "zarielrafale", Arial, sans-serif;
 }
+.rafales .carnet {
+  margin: 10px;
+}
 .rafales .adversite-content {
   display: flex;
   flex-direction: column;

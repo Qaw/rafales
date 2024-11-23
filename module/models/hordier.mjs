@@ -33,4 +33,16 @@ export default class RafalesHordier extends foundry.abstract.TypeDataModel {
   get isCroc() {
     return this.croc
   }
+
+  get isScribe() {
+    return this.role === "scribe"
+  }
+
+  get hasCarnet() {
+    return this.parent.items.filter((item) => item.type === "carnet").length > 0
+  }
+
+  get carnet() {
+    return this.parent.items.find((item) => item.type === "carnet")
+  }
 }

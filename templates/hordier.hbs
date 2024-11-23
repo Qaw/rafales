@@ -18,6 +18,12 @@
             {{formInput systemFields.role value=system.role localize=true}}
             <div data-tooltip="Croc">{{formInput systemFields.croc value=system.croc}}</div>
           {{/if}}
+          {{#if (and isScribe hasCarnet)}}
+            <div class="hordier-carnet" >
+              <i class="fas fa-book" data-action="openCarnet" data-tooltip="{{localize "RAFALES.Tooltip.openCarnet"}}"></i>
+              {{#if isEditMode}}<i class="fas fa-trash" data-action="deleteCarnet" data-tooltip="{{localize "RAFALES.Tooltip.deleteCarnet"}}"></i>{{/if}}
+            </div>
+          {{/if}}
         </div>
         <div class="horde-nom">
           <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>

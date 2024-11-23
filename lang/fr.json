@@ -3,6 +3,9 @@
     "Actor": {
       "horde": "Horde",
       "hordier": "Hordier"
+    },
+    "Item": {
+      "carnet": "Carnet"
     }
   },
   "RAFALES": {
@@ -62,12 +65,15 @@
     },
     "Warning": {
       "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?",
-      "noHordeConfigured": "Aucune horde de référence n'a été configurée."
+      "noHordeConfigured": "Aucune horde de référence n'a été configurée.",
+      "carnetAlreadyExists": "Le scribe a déjà un carnet de contre."
     },
     "Tooltip": {
       "createLink": "Créer un nouveau lien",
       "deleteLink": "Supprimer le lien",
-      "increaseDecreaseStat": "Clic gauche pour diminuer de 1, clic droit pour augmenter de 1"
+      "increaseDecreaseStat": "Clic gauche pour diminuer de 1, clic droit pour augmenter de 1",
+      "openCarnet": "Ouvrir le carnet de contre",
+      "deleteCarnet": "Supprimer le carnet de contre"
     },
     "Label": {
       "numeroHorde": "N° de Horde",

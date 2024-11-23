@@ -16,6 +16,8 @@ export default class HordierSheet extends RafalesActorSheet {
       createLink: HordierSheet.#onCreateLink,
       deleteLink: HordierSheet.#onDeleteLink,
       roll: HordierSheet.#onRoll,
+      openCarnet: HordierSheet.#onOpenCarnet,
+      deleteCarnet: HordierSheet.#onDeleteCarnet,
     },
   }
 
@@ -48,6 +50,24 @@ export default class HordierSheet extends RafalesActorSheet {
     return this._sheetMode === this.constructor.SHEET_MODES.EDIT
   }
 
+  /* -------------------------------------------- */
+  /*  Rendering                                   */
+  /* -------------------------------------------- */
+
+  /** @override */
+  async _onRender(_context, _options) {
+    if (!game.user.isGM) return
+    new DragDrop({
+      dragSelector: ".draggable",
+      dropSelector: null,
+      callbacks: {
+        dragstart: this._onDragStart.bind(this),
+        dragover: this._onDragOver.bind(this),
+        drop: this._onDrop.bind(this),
+      },
+    }).bind(this.element)
+  }
+
   /** @override */
   async _prepareContext(options) {
     const context = await super._prepareContext()
@@ -63,33 +83,57 @@ export default class HordierSheet extends RafalesActorSheet {
 
     context.isCroc = this.document.system.isCroc
     context.croc = this.document.system.isCroc ? "(Croc)" : ""
+    context.isScribe = this.document.system.isScribe
+    context.hasCarnet = this.document.system.hasCarnet
+    context.carnet = this.document.system.hasCarnet ? this.document.system.carnet : null
     return context
   }
 
+  /* -------------------------------------------- */
+  /*  Drag and Drop                               */
+  /* -------------------------------------------- */
+
   /**
-   * Handle changing a Document's image.
-   *
-   * @this HordierSheet
-   * @param {PointerEvent} event   The originating click event
-   * @param {HTMLElement} target   The capturing HTML element which defined a [data-action]
-   * @returns {Promise}
-   * @private
+   * An event that occurs when a drag workflow begins for a draggable item on the sheet.
+   * @param {DragEvent} event       The initiating drag start event
+   * @returns {Promise<void>}
+   * @protected
    */
-  static async #onEditImage(event, target) {
-    const attr = target.dataset.edit
-    const current = foundry.utils.getProperty(this.document, attr)
-    const { img } = this.document.constructor.getDefaultArtwork?.(this.document.toObject()) ?? {}
-    const fp = new FilePicker({
-      current,
-      type: "image",
-      redirectToRoot: img ? [img] : [],
-      callback: (path) => {
-        this.document.update({ [attr]: path })
-      },
-      top: this.position.top + 40,
-      left: this.position.left + 10,
-    })
-    return fp.browse()
+  async _onDragStart(event) {}
+
+  /* -------------------------------------------- */
+
+  /**
+   * An event that occurs when a drag workflow moves over a drop target.
+   * @param {DragEvent} event
+   * @protected
+   */
+  _onDragOver(event) {}
+
+  /* -------------------------------------------- */
+
+  /**
+   * An event that occurs when data is dropped into a drop target.
+   * @param {DragEvent} event
+   * @returns {Promise<void>}
+   * @protected
+   */
+  async _onDrop(event) {
+    if (!this.actor.system.isScribe) return
+
+    // Type and uuid
+    const data = TextEditor.getDragEventData(event)
+    if (data.type !== "Item") return
+
+    const item = await fromUuid(data.uuid)
+    if (item.type !== "carnet") return
+
+    if (this.document.system.hasCarnet) {
+      return ui.notifications.warn(game.i18n.localize("RAFALES.Warning.carnetAlreadyExists"))
+    }
+
+    let itemData = item.toObject()
+    await this.document.createEmbeddedDocuments("Item", [itemData], { renderSheet: false })
   }
 
   /**
@@ -125,5 +169,23 @@ export default class HordierSheet extends RafalesActorSheet {
 
   static #onRoll(event, target) {
     this.actor.roll()
+  }
+
+  static #onOpenCarnet(event, target) {
+    if (!this.actor.system.isScribe) return
+
+    if (this.actor.system.hasCarnet) {
+      const carnet = this.actor.system.carnet
+      carnet.sheet.render(true)
+    }
+  }
+
+  static #onDeleteCarnet(event, target) {
+    if (!this.actor.system.isScribe) return
+
+    if (this.actor.system.hasCarnet) {
+      const carnet = this.actor.system.carnet
+      carnet.delete()
+    }
   }
 }

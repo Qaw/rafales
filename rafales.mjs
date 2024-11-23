@@ -49,6 +49,16 @@ Hooks.once("init", function () {
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordeSheet, { types: ["horde"], makeDefault: true })
   DocumentSheetConfig.registerSheet(Actor, SYSTEM.id, applications.HordierSheet, { types: ["hordier"], makeDefault: true })
 
+  // Item document configuration
+  CONFIG.Item.documentClass = documents.RafalesItem
+  CONFIG.Item.dataModels = {
+    carnet: models.RafalesCarnet,
+  }
+
+  // Item sheet configuration
+  Items.unregisterSheet("core", ItemSheet)
+  DocumentSheetConfig.registerSheet(Item, SYSTEM.id, applications.CarnetSheet, { types: ["carnet"], makeDefault: true })
+
   // Dice system configuration
   CONFIG.Dice.rolls.push(documents.RafalesRoll)
 

@@ -36,7 +36,9 @@
       "horde": {},
       "hordier": { "htmlFields": ["biographie", "notes"] }
     },
-    "Item": {}
+    "Item": {
+      "carnet": { "htmlFields": ["notes"] }
+    }
   },
   "grid": {
     "distance": 1,
