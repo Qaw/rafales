@@ -2,6 +2,13 @@
   "name": "rafales",
   "private": true,
   "version": "1.0.0",
+  "scripts": {
+    "css": "gulp css",
+    "watch": "gulp",
+    "gulp": "gulp",
+    "pushLDBtoYML": "node ./tools/pushLDBtoYML.mjs",
+    "pullYMLtoLDB": "node ./tools/pullYMLtoLDB.mjs"
+  },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@foundryvtt/foundryvtt-cli": "^1.0.2",

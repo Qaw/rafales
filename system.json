@@ -45,6 +45,20 @@
     "units": "ft"
   },
   "socket": true,
+  "packs": [
+    {
+      "name": "userguide",
+      "label": "Guide du système",
+      "system": "rafales",
+      "path": "packs/guide-du-systeme",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
   "flags": {
     "hotReload": {
       "extensions": ["css", "hbs", "json"],
