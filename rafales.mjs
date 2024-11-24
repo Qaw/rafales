@@ -16,6 +16,7 @@ import * as models from "./module/models/_module.mjs"
 
 import { initControlButtons } from "./module/control-buttons.mjs"
 import { handleSocketEvent } from "./module/socket.mjs"
+import { Macros } from "./module/macros.mjs"
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -205,5 +206,17 @@ Hooks.on("renderChatMessage", (message, html, data) => {
 
       newMessage.update({ rolls: [JSON.stringify(roll)] })
     })
+  }
+})
+
+/**
+ * Create a macro when dropping an entity on the hotbar
+ * Actor     - open actor sheet
+ */
+Hooks.on("hotbarDrop", (bar, data, slot) => {
+  if (["Actor"].includes(data.type)) {
+    console.log("hotbarDrop", bar, data, slot)
+    Macros.createRafalesMacro(data, slot)
+    return false
   }
 })

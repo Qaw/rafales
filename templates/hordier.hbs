@@ -5,31 +5,29 @@
        <img src="{{actor.img}}" data-edit="img" data-action="editImage" data-tooltip="{{actor.name}}" />
     </div>
     <div class="hordier-header-milieu">
-       <div>
-          <div class="nom" {{#if isPlayMode}}data-action="roll"{{/if}}>
-          <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
-          {{formInput fields.name value=source.name disabled=isPlayMode}}
+      <div class="nom" {{#if isPlayMode}}data-action="roll" data-tooltip="Cliquer pour lancer un dé" data-tooltip-direction="UP"{{/if}}>
+        <div class="nom-label">{{localize "RAFALES.Label.nom"}}</div>
+        {{formInput fields.name value=source.name disabled=isPlayMode}}
+      </div>
+      <div class="hordier-role">
+        <div class="role-label">{{localize "RAFALES.Label.role"}}</div>
+        {{#if isPlayMode}}
+          <div class="role">{{system.displayRole}} {{#if isCroc}}{{croc}}{{/if}}</div>
+        {{else}}
+          {{formInput systemFields.role value=system.role localize=true}}
+          <div data-tooltip="Croc">{{formInput systemFields.croc value=system.croc}}</div>
+        {{/if}}
+        {{#if (and isScribe hasCarnet)}}
+          <div class="hordier-carnet" >
+            <i class="fas fa-book" data-action="openCarnet" data-tooltip="{{localize "RAFALES.Tooltip.openCarnet"}}"></i>
+            {{#if isEditMode}}<i class="fas fa-trash" data-action="deleteCarnet" data-tooltip="{{localize "RAFALES.Tooltip.deleteCarnet"}}"></i>{{/if}}
           </div>
-        <div class="hordier-role">
-          <div class="role-label">{{localize "RAFALES.Label.role"}}</div>
-          {{#if isPlayMode}}
-            <div class="role">{{system.displayRole}} {{#if isCroc}}{{croc}}{{/if}}</div>
-          {{else}}
-            {{formInput systemFields.role value=system.role localize=true}}
-            <div data-tooltip="Croc">{{formInput systemFields.croc value=system.croc}}</div>
-          {{/if}}
-          {{#if (and isScribe hasCarnet)}}
-            <div class="hordier-carnet" >
-              <i class="fas fa-book" data-action="openCarnet" data-tooltip="{{localize "RAFALES.Tooltip.openCarnet"}}"></i>
-              {{#if isEditMode}}<i class="fas fa-trash" data-action="deleteCarnet" data-tooltip="{{localize "RAFALES.Tooltip.deleteCarnet"}}"></i>{{/if}}
-            </div>
-          {{/if}}
-        </div>
-        <div class="horde-nom">
-          <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
-          {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}   
-        </div>
-       </div>
+        {{/if}}
+      </div>
+      <div class="horde-nom">
+        <div class="horde-label">{{localize "RAFALES.Label.numeroHorde"}}</div>
+        {{formInput systemFields.horde value=system.horde disabled=isPlayMode}}   
+      </div>
     </div>
     <div class="hordier-header-droite">
       <div><img class="hordier-role-img" src="{{system.imgRole}}" /></div>
