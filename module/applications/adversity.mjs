@@ -140,8 +140,8 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
   /**
    * Increases the adversity value by 1 and updates the game settings.
    *
-   * @param {Event} event - The event that triggered the increase.
-   * @param {Object} target - The target object associated with the event.
+   * @param {Event} event The event that triggered the increase.
+   * @param {Object} target The target object associated with the event.
    * @returns {Promise<void>} A promise that resolves when the adversity value has been updated in the game settings.
    * @private
    */
@@ -156,8 +156,8 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
    * Decreases the adversity value by 1 if it is greater than 0.
    * Updates the game settings with the new adversity value.
    *
-   * @param {Event} event - The event that triggered the decrease.
-   * @param {Object} target - The target object associated with the event.
+   * @param {Event} event The event that triggered the decrease.
+   * @param {Object} target The target object associated with the event.
    * @returns {Promise<void>} - A promise that resolves when the adversity value has been updated.
    * @private
    */
@@ -175,8 +175,8 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
    * Opens the horde sheet for the specified event and target.
    * If the horde is found, its sheet is rendered. Otherwise, a notification is shown.
    *
-   * @param {Event} event - The event that triggered the opening of the horde.
-   * @param {Object} target - The target object associated with the event.
+   * @param {Event} event The event that triggered the opening of the horde.
+   * @param {Object} target The target object associated with the event.
    * @private
    */
   static #openHorde(event, target) {
@@ -191,8 +191,8 @@ export default class RafalesAdversity extends HandlebarsApplicationMixin(Applica
   /**
    * Handles the spending of adversity points for a horde.
    *
-   * @param {Event} event - The event that triggered this function.
-   * @param {HTMLElement} target - The target element that contains the dataset with the stat to be updated.
+   * @param {Event} event The event that triggered this function.
+   * @param {HTMLElement} target The target element that contains the dataset with the stat to be updated.
    * @private
    */
   static #spendAdversity(event, target) {

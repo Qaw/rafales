@@ -27,7 +27,7 @@ export default class RafalesHordier extends foundry.abstract.TypeDataModel {
   }
 
   get imgRole() {
-    return `systems/${SYSTEM.id}/ui/role_${this.role}.webp`
+    return `systems/${SYSTEM.id}/assets/role_${this.role}.webp`
   }
 
   get isCroc() {

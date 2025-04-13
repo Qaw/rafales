@@ -63,7 +63,7 @@ export default class RafalesRoll extends Roll {
         choiceDangerosite = { sacrificiel: "Sacrificiel" }
       } else ui.notifications.info("La horde n'a plus de statistiques vitales.")
     } else {
-      // ui.notifications.info("La horde de référence n'a pas été correctement configurée.")
+      // Ui.notifications.info("La horde de référence n'a pas été correctement configurée.")
       choiceDangerosite = { difficile: "Difficile", dangereux: "Dangereux", sacrificiel: "Sacrificiel" }
     }
 

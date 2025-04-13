@@ -1,0 +1,235 @@
+name: Guide Utilisateur
+pages:
+  - sort: 100000
+    name: Introduction
+    type: text
+    _id: IZ7Lq0xqYuxhW3Yi
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: <p>Bienvenue dans le système Rafales.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      TehdEFxPJYu6nmTK: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.IZ7Lq0xqYuxhW3Yi'
+  - sort: 200000
+    name: Options
+    type: text
+    _id: HrpcVX9p8Q8IHxod
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <h2>Mode OneShot</h2><p>En activant cette option, les statistiques
+        vitales vont de 0 à 5, au lieu de 0 à 20 en mode
+        normal.</p><p></p><h2>Affiche les infobulles des
+        statistiques</h2><p>Permet d'afficher ou non la valeur de la statistique
+        sous forme d'une infobulle lorsque la souris passe sur la
+        spirale.</p><p></p><h2>Adversité</h2><p>Permet de changer directement la
+        valeur d'adversité.</p><p></p><h2>Id de la Horde de
+        référence</h2><p>Permet de changer directement l'id de la horde de
+        référence.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      TehdEFxPJYu6nmTK: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: null
+      modifiedTime: 1744460835821
+      lastModifiedBy: gKzlazUprlVInDrG
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.HrpcVX9p8Q8IHxod'
+  - sort: 300000
+    name: Acteurs
+    type: text
+    _id: FGynQf9Q7UjNvXDl
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <h2>Horde</h2><p>Lors de la création d'une horde, l'image par défaut de
+        la horde est attribuée à l'acteur et au prototype du token de la
+        horde.</p><p></p><p>Cohésion, Vitalité et Conviction</p><p></p><p>Pour
+        changer la valeur, il y a deux possibilités.</p><p></p><p>La première
+        est accessible au MJ et aux joueuses. Il suffit de cliquer sur le nom :
+        clic gauche pour diminuer, clic droit pour augmenter.</p><p></p><p>La
+        deuxième est réservée au MJ, il suffit de change directement la valeur
+        dans le champ en dessous de la spirale. Ce champ n'est visible que par
+        le MJ.</p><h2>Hordier</h2><p>Un hordier peut être glissé-déposé dans la
+        barre de raccoucis : cela créera une macro qui permet deux choses. Un
+        clic lance un jet de dés pour ce hordier, un Shift+Click ouvre la
+        feuille de personnage du hordier.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      TehdEFxPJYu6nmTK: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: null
+      modifiedTime: 1744467597329
+      lastModifiedBy: gKzlazUprlVInDrG
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.FGynQf9Q7UjNvXDl'
+  - sort: 400000
+    name: Objets
+    type: text
+    _id: wXTumx5iV57ILOIF
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: <h2>Carnet</h2><p></p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      TehdEFxPJYu6nmTK: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: null
+      modifiedTime: null
+      lastModifiedBy: null
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.wXTumx5iV57ILOIF'
+  - sort: 500000
+    name: Jets de dés
+    type: text
+    _id: WheOyL42Dq6Kbu3g
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Un jet de dés ouvre une fenêtre qui permet de choisir la
+        difficulté.</p><p>Le résultat s'affiche dans le tchat.</p><p>Pour un jet
+        dangereux, en cas d'échec, il faut cliquer sur la statistique vitale qui
+        doit diminuer.<br /></p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      TehdEFxPJYu6nmTK: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: null
+      modifiedTime: 1744467724626
+      lastModifiedBy: gKzlazUprlVInDrG
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.WheOyL42Dq6Kbu3g'
+  - sort: 600000
+    name: Adversité
+    type: text
+    _id: ZkUguN4YKFwro5Fm
+    system: {}
+    title:
+      show: true
+      level: 1
+    image: {}
+    text:
+      format: 1
+      content: >-
+        <p>Une fenêtre d'adversité peut être affichée ou cachée grâce au menu
+        Adversité du menu Rafales présent sur le côté gauche de
+        l'interface.</p><p>C'est un menu ajouté après les menus
+        Foundry.</p><p>Cette fenêtre affiche la valeur de l'adversité actuelle
+        ainsi que le numéro de horde.</p><p></p><p>Pour faire le lien avec la
+        horde actuelle, il faut glisser-déposer un acteur Horde dans la
+        fenêtre.</p><p>Une fois une horde reliée, un clic sur le numéro de horde
+        ouvre la feuille de horde.</p><p>En cas de soucis, il est toujours
+        possible de modifier à la main l'option Adversité, dans la partie
+        Options du système.</p>
+    video:
+      controls: true
+      volume: 0.5
+    src: null
+    ownership:
+      default: -1
+      gKzlazUprlVInDrG: 3
+    flags: {}
+    _stats:
+      compendiumSource: null
+      duplicateSource: null
+      coreVersion: '12.331'
+      systemId: rafales
+      systemVersion: 1.0.0
+      createdTime: 1744467307477
+      modifiedTime: 1744467309839
+      lastModifiedBy: gKzlazUprlVInDrG
+    _key: '!journal.pages!GjTEvoIbPeJ74DsS.ZkUguN4YKFwro5Fm'
+folder: null
+ownership:
+  default: 0
+  TehdEFxPJYu6nmTK: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: rafales
+  systemVersion: 1.0.0
+  createdTime: 1732457906599
+  modifiedTime: 1732457906599
+  lastModifiedBy: TehdEFxPJYu6nmTK
+_id: GjTEvoIbPeJ74DsS
+sort: 0
+_key: '!journal!GjTEvoIbPeJ74DsS'
+

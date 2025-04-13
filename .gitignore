@@ -6,7 +6,7 @@
 node_modules/
 
 # Foundry VTT
-packs/
+/packs/
 
 # Less
 styles/*.css

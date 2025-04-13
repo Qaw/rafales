@@ -45,6 +45,7 @@
     "units": "ft"
   },
   "socket": true,
+  "background": "systems/rafales/assets/fond_connexion.webp",
   "packs": [
     {
       "name": "userguide",
@@ -52,6 +53,7 @@
       "system": "rafales",
       "path": "packs/guide-du-systeme",
       "type": "JournalEntry",
+      "banner": "systems/rafales/assets/guide_utilisateur.webp",
       "ownership": {
         "PLAYER": "NONE",
         "TRUSTED": "OBSERVER",

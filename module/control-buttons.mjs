@@ -11,7 +11,7 @@ export function initControlButtons() {
       menu.push({
         name: "gm-adversite",
         title: game.i18n.localize("RAFALES.Adversity.title"),
-        icon: "fa-solid fa-users",
+        icon: "adversite",
         button: true,
         onClick: () => {
           if (!foundry.applications.instances.has("rafales-application-adversity")) {

@@ -6,8 +6,8 @@
     "css": "gulp css",
     "watch": "gulp",
     "gulp": "gulp",
-    "pushLDBtoYML": "node ./tools/pushLDBtoYML.mjs",
-    "pullYMLtoLDB": "node ./tools/pullYMLtoLDB.mjs"
+    "LDBtoYML": "node ./tools/LDBtoYML.mjs",
+    "YMLtoLDB": "node ./tools/YMLtoLDB.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

@@ -24,13 +24,23 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "bakatoo";
+  font-family: "bakatoo1";
   src: url("./fonts/bakatoo.ttf") format("truetype");
   font-style: normal;
 }
 @font-face {
   font-family: "zarielrafale";
   src: url("./fonts/zarielrafale-regular.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "bakatoo";
+  src: url("./fonts/baka_too_regular.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "fugu";
+  src: url("./fonts/fugu_regular.ttf") format("truetype");
   font-style: normal;
 }
 /* ----------------------------------------- */
@@ -50,10 +60,11 @@
   --color-accent: #cf9356;
   --color-link-text: #f36739;
   --color-border-highlight: var(--color-accent);
+  --font-standard: "fugu", Arial, sans-serif;
 }
 .chat-message.message {
   background: var(--color-cool-5);
-  background-image: url("./ui/fond.webp");
+  background-image: url("./assets/fond.webp");
 }
 .rafales.application {
   --color-header-background: transparent;
@@ -62,7 +73,7 @@
   --color-form-hint: var(--color-tertiary);
   --color-form-hint-hover: var(--color-secondary);
   background: var(--color-cool-5);
-  background-image: url("./ui/fond.webp");
+  background-image: url("./assets/fond.webp");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   gap: 0;
@@ -110,12 +121,12 @@
   margin-left: 20px;
 }
 .rafales .horde .nom .nom-label {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   color: #671006;
 }
 .rafales .horde .nom input {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 3rem;
   width: 100px;
   text-align: center;
@@ -327,24 +338,24 @@
   gap: 10px;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .nom .nom-label {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   color: #671006;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .nom input {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   width: 400px;
   background-color: inherit;
   margin-left: 10px;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .hordier-role {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   color: #671006;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .hordier-role .role {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 2rem;
   width: 200px;
   background-color: inherit;
@@ -367,12 +378,12 @@
   background-color: inherit;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .horde-nom {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   color: #671006;
 }
 .rafales .hordier .hordier-header .hordier-header-milieu .horde-nom input {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   width: 70px;
   background-color: inherit;
@@ -391,7 +402,7 @@
   border-radius: 10px;
 }
 .rafales .hordier fieldset legend {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   padding: 0 5px 0 5px;
   letter-spacing: 4px;
@@ -409,7 +420,7 @@
   margin: 10px 0 0 0;
 }
 .rafales .hordier .lien .lien-label {
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.3rem;
   width: 200px;
 }
@@ -430,7 +441,7 @@
 .rafales .adversite-content {
   display: flex;
   flex-direction: column;
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.8rem;
   color: #671006;
   text-align: center;
@@ -521,7 +532,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: "bakatoo", Arial, sans-serif;
+  font-family: var(--font-standard);
   font-size: 1.4rem;
   color: #671006;
   width: 210px;
@@ -555,7 +566,7 @@
 i.rafales {
   width: 36px;
   height: 36px;
-  background-image: url("./ui/menu.webp");
+  background-image: url("./assets/icon_menu.webp");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -563,4 +574,23 @@ i.rafales {
   position: relative;
   filter: grayscale(1);
   transition: 0.3s;
+}
+i.adversite {
+  width: 36px;
+  height: 36px;
+  background-image: url("./assets/icon_adversite.webp");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+  filter: grayscale(1);
+  transition: 0.3s;
+}
+#pause > img {
+  content: url("./assets/pause.webp");
+  height: 192px;
+  width: 192px;
+  top: -45px;
+  left: calc(50% - 96px);
 }

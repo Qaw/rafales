@@ -74,8 +74,8 @@ export default class HordeSheet extends RafalesActorSheet {
    *
    * This method updates the actor's "connaissance" value based on the event triggered by the user interaction.
    *
-   * @param {Event} event - The event object triggered by the user interaction.
-   * @param {HTMLElement} target - The target element that triggered the event.
+   * @param {Event} event The event object triggered by the user interaction.
+   * @param {HTMLElement} target The target element that triggered the event.
    * @returns {Promise<void>} - A promise that resolves when the actor's "connaissance" value has been updated.
    * @private
    */
@@ -100,8 +100,8 @@ export default class HordeSheet extends RafalesActorSheet {
    *
    * This method updates the actor's "espoir" value based on the checkbox state and the current value.
    *
-   * @param {Event} event - The event object from the change event.
-   * @param {HTMLElement} target - The target element that triggered the event.
+   * @param {Event} event The event object from the change event.
+   * @param {HTMLElement} target The target element that triggered the event.
    * @returns {Promise<void>} - A promise that resolves when the actor's "espoir" value has been updated.
    * @private
    */
@@ -126,8 +126,8 @@ export default class HordeSheet extends RafalesActorSheet {
    *
    * This method updates the "vif" value of the actor's statistics based on the event triggered.
    *
-   * @param {Event} event - The event object triggered by the change.
-   * @param {HTMLElement} target - The target element of the event.
+   * @param {Event} event The event object triggered by the change.
+   * @param {HTMLElement} target The target element of the event.
    * @returns {Promise<void>} - A promise that resolves when the actor's statistics have been updated.
    */
   static async #onchangeVif(event, target) {
