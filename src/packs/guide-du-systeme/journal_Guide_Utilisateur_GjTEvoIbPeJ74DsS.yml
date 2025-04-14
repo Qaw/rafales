@@ -191,14 +191,16 @@ pages:
       content: >-
         <p>Les jets de dés ne sont accessibles qu'au Hordier.</p><p>Ou
         directement sur la feuille en cliquant sur le nom, ou dans la barre de
-        raccourcis après avoir glissé-déposé l'acteur dans
-        celle-ci.</p><p></p><p>Un jet de dés ouvre une fenêtre qui permet de
-        choisir la difficulté.</p><p>Le résultat s'affiche dans le
-        tchat.</p><p></p><p>Selon le niveau de lancer de dés et le résultat, les
-        points d'adversité vont s'additionner automatiquement, les pertes de
-        statistiques vitales vont s'effectuer automatiquement. Si la perte est
-        d'un point dans une statistique vitale, trois boutons s'afficheront dans
-        le tchat pour choisir quelle statistique est concernée.<br /></p>
+        raccourcis après avoir glissé-déposé l'acteur dans celle-ci.</p><p>Seul
+        le MJ peut créer le raccourci, il doit ensuite donner les droits sur
+        celui-ci au joueur concerné.</p><p></p><p>Un jet de dés ouvre une
+        fenêtre qui permet de choisir la difficulté.</p><p>Le résultat s'affiche
+        dans le tchat.</p><p></p><p>Selon le niveau de lancer de dés et le
+        résultat, les points d'adversité vont s'additionner automatiquement, les
+        pertes de statistiques vitales vont s'effectuer automatiquement. Si la
+        perte est d'un point dans une statistique vitale, trois boutons
+        s'afficheront dans le tchat pour choisir quelle statistique est
+        concernée.<br /></p>
     video:
       controls: true
       volume: 0.5
@@ -214,8 +216,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: null
-      modifiedTime: 1744635297286
-      lastModifiedBy: JsdEyb0hpouc5qnn
+      modifiedTime: 1744646615994
+      lastModifiedBy: gKzlazUprlVInDrG
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.WheOyL42Dq6Kbu3g'
   - sort: 600000
     name: Adversité

@@ -112,6 +112,10 @@
       "DisplayInfoStats": {
         "label": "Afficher les infobulles des statistiques",
         "hint": "Affiche les infobulles des statistiques vitales de la horde de référence"
+      },
+      "BookCharMax": {
+        "label": "Nombre maximum de caractères du carnet de contre",
+        "hint": "Le carnet de contre du scribe ne peut pas dépasser ce nombre de caractères"
       }
     },
     "Adversity": {

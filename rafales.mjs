@@ -103,6 +103,16 @@ Hooks.once("init", function () {
     requiresReload: false,
   })
 
+  game.settings.register("rafales", "bookCharMax", {
+    name: "RAFALES.Setting.BookCharMax.label",
+    hint: "RAFALES.Setting.BookCharMax.hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    default: 1000,
+    requiresReload: true,
+  })
+
   Handlebars.registerHelper("numeroLien", function (value) {
     return parseInt(value) + 1
   })
@@ -229,14 +239,15 @@ Hooks.on("renderChatMessage", (message, html, data) => {
  */
 Hooks.on("hotbarDrop", (bar, data, slot) => {
   if (["Actor"].includes(data.type)) {
-    console.log("hotbarDrop", bar, data, slot)
     Macros.createRafalesMacro(data, slot)
     return false
   }
 })
 
+/**
+ * Met à jour la fenêtre adversité quand il y a une modification sur la horde liée
+ */
 Hooks.on("updateActor", (document, changed, options, userId) => {
-  console.log("updateActor", document, changed, options, userId)
   if (document.id === game.settings.get("rafales", "hordeId")) {
     if (game.user.isGM) game.system.applicationAdversity.render(true)
   }

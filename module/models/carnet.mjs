@@ -8,8 +8,9 @@ export default class RafalesCarnet extends foundry.abstract.TypeDataModel {
 
   /** @inheritDoc */
   async _preUpdate(changes, options, user) {
-    console.log("RafalesCarnet._preUpdate", changes, options, user)
-    changes.system.notes = changes.system.notes.substring(0, 1000)
+    // Limit the size of the notes field to x characters
+    const charMax = game.settings.get("rafales", "bookCharMax")
+    changes.system.notes = changes.system.notes.substring(0, charMax)
     super._preUpdate(changes, options, user)
   }
 }
