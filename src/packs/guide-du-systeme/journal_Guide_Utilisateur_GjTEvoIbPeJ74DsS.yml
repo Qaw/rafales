@@ -11,7 +11,18 @@ pages:
     image: {}
     text:
       format: 1
-      content: <p>Bienvenue dans le système Rafales.</p>
+      content: >-
+        <p>Bienvenue dans le système Rafales.</p><p></p><p><span>Rafales est un
+        jeu de rôle inspiré du roman La Horde du Contrevent d'Alain Damasio. Ce
+        système Foundry permet de gérer les mécaniques du jeu en ligne, avec les
+        outils nécessaires pour suivre l’évolution d’une Horde et de ses
+        membres.</span></p><p></p><h2><span>Licences
+        </span></h2><p><span>Rafales est un jeu de rôle conçu par Les Éditions
+        du Zyphe. Toutes les marques, logos et illustrations utilisés sont la
+        propriété des Éditions du Zyphe et sont utilisés avec
+        autorisation.</span></p><p></p><h2><span> Contributeurs
+        </span></h2><p><span>Ce système est développé par Kristov, et publié
+        avec l’accord des auteurs et ayants droit.</span></p><p></p><p></p>
     video:
       controls: true
       volume: 0.5
@@ -27,8 +38,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: null
-      modifiedTime: null
-      lastModifiedBy: null
+      modifiedTime: 1744633320332
+      lastModifiedBy: JsdEyb0hpouc5qnn
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.IZ7Lq0xqYuxhW3Yi'
   - sort: 200000
     name: Options
@@ -50,7 +61,7 @@ pages:
         spirale.</p><p></p><h2>Adversité</h2><p>Permet de changer directement la
         valeur d'adversité.</p><p></p><h2>Id de la Horde de
         référence</h2><p>Permet de changer directement l'id de la horde de
-        référence.</p>
+        référence.</p><p></p>
     video:
       controls: true
       volume: 0.5
@@ -83,16 +94,34 @@ pages:
       content: >-
         <h2>Horde</h2><p>Lors de la création d'une horde, l'image par défaut de
         la horde est attribuée à l'acteur et au prototype du token de la
-        horde.</p><p></p><p>Cohésion, Vitalité et Conviction</p><p></p><p>Pour
-        changer la valeur, il y a deux possibilités.</p><p></p><p>La première
-        est accessible au MJ et aux joueuses. Il suffit de cliquer sur le nom :
-        clic gauche pour diminuer, clic droit pour augmenter.</p><p></p><p>La
-        deuxième est réservée au MJ, il suffit de change directement la valeur
-        dans le champ en dessous de la spirale. Ce champ n'est visible que par
-        le MJ.</p><h2>Hordier</h2><p>Un hordier peut être glissé-déposé dans la
-        barre de raccoucis : cela créera une macro qui permet deux choses. Un
-        clic lance un jet de dés pour ce hordier, un Shift+Click ouvre la
-        feuille de personnage du hordier.</p>
+        horde.</p><p>Sous le N° de Horde, c'est le nom qui est affiché.</p><p>En
+        haut à droite, c'est l'image par défaut de la horde. En cliquant dessus,
+        il est possible de changer l'image.</p><p>N'oubliez pas que la Horde est
+        collective, et donnez la propriété de l'acteur à tous les
+        joueurs.</p><p></p><h3>Cohésion, Vitalité et Conviction</h3><p>Pour
+        changer la valeur, il y a deux possibilités.</p><p>La première est
+        accessible au MJ et aux joueuses. Il suffit de cliquer sur le nom : clic
+        gauche pour diminuer, clic droit pour augmenter.</p><p>La deuxième est
+        réservée au MJ, il suffit de change directement la valeur dans le champ
+        en dessous de la spirale. Ce champ n'est visible que par le
+        MJ.</p><p></p><h3>Connaissance, Espoir et Vif</h3><p>Lorsque la 5ième
+        case est cochée, un symbole de spirale apparait pour restaurer la
+        jauge.</p><p>En cliquant dessus, un message de confirmation est affiché.
+        Si la restauration est confirmée, la jauge est remis à 0 et la
+        statistique vitale correspondante est réinitialisée au maximum (20 ou 5
+        selon l'option du système).</p><p></p><p></p><h2>Hordier</h2><p>Un
+        hordier peut être glissé-déposé dans la barre de raccoucis : cela créera
+        une macro qui permet deux choses. Un clic lance un jet de dés pour ce
+        hordier, un Shift+Click ouvre la feuille de personnage du
+        hordier.</p><p></p><p>En haut à droite, le cadenas permet de
+        verrouiller/déverrouiller la fiche.</p><p>Il faut déverrouiller la fiche
+        pour modifier le Nom, Rôle et N° de Horde.</p><p>Lorsqu'un rôle est
+        sélectionné, l'image correspondante est affichée en haut à
+        droite.</p><p></p><p>Il faut aussi déverrouiller la fiche pour ajouter
+        des liens via le + à côté de Liens.</p><p>Il suffit en suite de saisir
+        le nom puis le type de lien, dans les champs textes libres.</p><p>Il
+        faut aussi déverrouiller la fiche pour avoir accès au bouton de
+        suppression d'un lien.</p><p></p>
     video:
       controls: true
       volume: 0.5
@@ -108,8 +137,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: null
-      modifiedTime: 1744467597329
-      lastModifiedBy: gKzlazUprlVInDrG
+      modifiedTime: 1744635715400
+      lastModifiedBy: JsdEyb0hpouc5qnn
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.FGynQf9Q7UjNvXDl'
   - sort: 400000
     name: Objets
@@ -122,7 +151,14 @@ pages:
     image: {}
     text:
       format: 1
-      content: <h2>Carnet</h2><p></p>
+      content: >-
+        <h2>Carnet</h2><p>Le Carnet de contre est à la charge du
+        scribe.</p><p>L'objet peut être glissé-déposé uniquement sur la fiche
+        Hordier ayant le rôle Scribe.</p><p>Une icône apparait alors sur la
+        fiche pour permettre d'ouvrir le carnet de contre.</p><p>Le scribe ne
+        peut avoir qu'un seul carnet. </p><p>Pensez à donner les droits
+        Propriétaire au scribe.</p><p>Pour supprimer le lien vers le carnet de
+        contre, il faut passer en mode Edition.</p>
     video:
       controls: true
       volume: 0.5
@@ -138,8 +174,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: null
-      modifiedTime: null
-      lastModifiedBy: null
+      modifiedTime: 1744635675860
+      lastModifiedBy: JsdEyb0hpouc5qnn
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.wXTumx5iV57ILOIF'
   - sort: 500000
     name: Jets de dés
@@ -153,10 +189,16 @@ pages:
     text:
       format: 1
       content: >-
-        <p>Un jet de dés ouvre une fenêtre qui permet de choisir la
-        difficulté.</p><p>Le résultat s'affiche dans le tchat.</p><p>Pour un jet
-        dangereux, en cas d'échec, il faut cliquer sur la statistique vitale qui
-        doit diminuer.<br /></p>
+        <p>Les jets de dés ne sont accessibles qu'au Hordier.</p><p>Ou
+        directement sur la feuille en cliquant sur le nom, ou dans la barre de
+        raccourcis après avoir glissé-déposé l'acteur dans
+        celle-ci.</p><p></p><p>Un jet de dés ouvre une fenêtre qui permet de
+        choisir la difficulté.</p><p>Le résultat s'affiche dans le
+        tchat.</p><p></p><p>Selon le niveau de lancer de dés et le résultat, les
+        points d'adversité vont s'additionner automatiquement, les pertes de
+        statistiques vitales vont s'effectuer automatiquement. Si la perte est
+        d'un point dans une statistique vitale, trois boutons s'afficheront dans
+        le tchat pour choisir quelle statistique est concernée.<br /></p>
     video:
       controls: true
       volume: 0.5
@@ -172,8 +214,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: null
-      modifiedTime: 1744467724626
-      lastModifiedBy: gKzlazUprlVInDrG
+      modifiedTime: 1744635297286
+      lastModifiedBy: JsdEyb0hpouc5qnn
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.WheOyL42Dq6Kbu3g'
   - sort: 600000
     name: Adversité
@@ -189,14 +231,19 @@ pages:
       content: >-
         <p>Une fenêtre d'adversité peut être affichée ou cachée grâce au menu
         Adversité du menu Rafales présent sur le côté gauche de
-        l'interface.</p><p>C'est un menu ajouté après les menus
-        Foundry.</p><p>Cette fenêtre affiche la valeur de l'adversité actuelle
-        ainsi que le numéro de horde.</p><p></p><p>Pour faire le lien avec la
-        horde actuelle, il faut glisser-déposer un acteur Horde dans la
-        fenêtre.</p><p>Une fois une horde reliée, un clic sur le numéro de horde
-        ouvre la feuille de horde.</p><p>En cas de soucis, il est toujours
-        possible de modifier à la main l'option Adversité, dans la partie
-        Options du système.</p>
+        l'interface.</p><p><strong>Attention ! Le menu n'est disponible que si
+        une scène au moins a été créée.</strong></p><p>C'est un menu ajouté
+        après les menus Foundry.</p><p>Cette fenêtre affiche la valeur de
+        l'adversité actuelle ainsi que le numéro de horde.</p><p></p><p>Pour
+        faire le lien avec la horde actuelle, il faut glisser-déposer un acteur
+        Horde dans la fenêtre.</p><p><strong>Attention ! Il faut qu'une scène au
+        moins ait été créée.</strong></p><p>Une fois une horde reliée, un clic
+        sur le numéro de horde ouvre la feuille de horde.</p><p>En cas de
+        soucis, il est toujours possible de modifier à la main l'option
+        Adversité, dans la partie Options du système.</p><p></p><p>Lorsque le
+        niveau d'adversité atteint 2, trois boutons sont affichés : un pour
+        chaque statistique vitale.</p><p>Il permet de dépenser 2 points
+        d'adversité en réduisant la statistique vitale correspondante.</p>
     video:
       controls: true
       volume: 0.5
@@ -212,8 +259,8 @@ pages:
       systemId: rafales
       systemVersion: 1.0.0
       createdTime: 1744467307477
-      modifiedTime: 1744467309839
-      lastModifiedBy: gKzlazUprlVInDrG
+      modifiedTime: 1744634276832
+      lastModifiedBy: JsdEyb0hpouc5qnn
     _key: '!journal.pages!GjTEvoIbPeJ74DsS.ZkUguN4YKFwro5Fm'
 folder: null
 ownership:
