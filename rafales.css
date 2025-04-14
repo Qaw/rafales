@@ -106,8 +106,7 @@
 .rafales .horde {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 0.6fr 1fr 1fr 0.6fr;
-  padding-top: 20px;
+  padding: 10px 0 10px 0;
   min-width: 560px;
 }
 .rafales .horde input[type="checkbox"]::before {
@@ -148,14 +147,13 @@
   letter-spacing: 2px;
 }
 .rafales .horde .cohesion .cohesion-img {
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 160px;
 }
 .rafales .horde .cohesion .cohesion-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 .rafales .horde .cohesion input {
   width: 50px;
@@ -212,15 +210,14 @@
   letter-spacing: 2px;
 }
 .rafales .horde .vitalite .vitalite-img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   transform: rotate(-90deg);
 }
 .rafales .horde .vitalite .vitalite-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 .rafales .horde .vitalite input {
   width: 50px;
@@ -265,15 +262,14 @@
   letter-spacing: 2px;
 }
 .rafales .horde .conviction .conviction-img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   transform: rotate(90deg);
 }
 .rafales .horde .conviction .conviction-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 .rafales .horde .conviction input {
   width: 50px;
