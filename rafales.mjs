@@ -203,6 +203,20 @@ Hooks.on("renderChatMessage", (message, html, data) => {
       const newMessage = game.messages.get(messageId)
       let roll = newMessage.rolls[0]
       roll.options.oneStatLost = false
+      roll.options.oneStatLostChosen = true
+      switch (stat) {
+        case "cohesion":
+          roll.options.oneStatLostStat = game.i18n.localize("RAFALES.Horde.FIELDS.statistiques.cohesion.label")
+          break
+        case "vitalite":
+          roll.options.oneStatLostStat = game.i18n.localize("RAFALES.Horde.FIELDS.statistiques.vitalite.label")
+          break
+        case "conviction":
+          roll.options.oneStatLostStat = game.i18n.localize("RAFALES.Horde.FIELDS.statistiques.conviction.label")
+          break
+        default:
+          break
+      }
 
       newMessage.update({ rolls: [JSON.stringify(roll)] })
     })

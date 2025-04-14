@@ -49,6 +49,14 @@ export default class RafalesRoll extends Roll {
     return this.options.oneStatLost
   }
 
+  get oneStatLostChosen() {
+    return this.options.oneStatLostChosen
+  }
+
+  get oneStatLostStat() {
+    return this.options.oneStatLostStat
+  }
+
   static async prompt(options = {}) {
     // Restreint le choix en fonction de la horde de référence si elle existe
     let choiceDangerosite
@@ -169,6 +177,8 @@ export default class RafalesRoll extends Roll {
     roll.options.difficulty = rollData.dangerosite
     roll.options.resultType = resultType
     roll.options.oneStatLost = oneStatLost
+    roll.options.oneStatLostChosen = false
+    roll.options.oneStatLostStat = null
     roll.options.introText = roll._createIntroText()
     roll.options.introTextMJ = roll._createIntroTextMJ()
 
@@ -222,6 +232,8 @@ export default class RafalesRoll extends Roll {
       isSuccess: this.isSuccess,
       isPartialSuccess: this.isPartialSuccess,
       oneStatLost: this.oneStatLost,
+      oneStatLostChosen: this.oneStatLostChosen,
+      oneStatLostStat: this.oneStatLostStat,
       actorId: this.actorId,
       actingCharName: this.actorName,
       actingCharImg: this.actorImage,
@@ -260,6 +272,8 @@ export default class RafalesRoll extends Roll {
         isPartialSuccess: this.resultType === "partialSuccess",
         isFailure: this.resultType === "failure",
         oneStatLost: this.oneStatLost,
+        oneStatLostChosen: this.oneStatLostChosen,
+        oneStatLostStat: this.oneStatLostStat,
         introText: this.introText,
         introTextMJ: this.introTextMJ,
         actingCharName: this.actorName,

@@ -40,6 +40,13 @@
     {{/if}}
   </div>
 
+  {{#if (and isGM oneStatLostChosen)}}
+    <div class="oneStatLost">
+      Diminution de
+      {{oneStatLostStat}}
+    </div>
+  {{/if}}
+
   {{#unless isPrivate}}
     <div class="dice-result">
       <h4 class="dice-total">{{total}}</h4>
