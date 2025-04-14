@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="hordier-header-droite">
-      <div><img class="hordier-role-img" src="{{system.imgRole}}" /></div>
+      {{#if system.role}}<div><img class="hordier-role-img" src="{{system.imgRole}}" /></div>{{/if}}
       <div>
         <a class="control" data-action="toggleSheet" data-tooltip="RAFALES.ToggleSheet" data-tooltip-direction="UP">
           <i class="fa-solid fa-user-{{ifThen isPlayMode 'lock' 'pen'}}"></i>

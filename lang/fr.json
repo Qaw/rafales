@@ -64,7 +64,7 @@
       }
     },
     "Warning": {
-      "confirmReset": "Êtes-vous sûr de vouloir réinitialiser la {name} ?",
+      "confirmReset": "Êtes-vous sûr de vouloir restaurer la {name} ?",
       "noHordeConfigured": "Aucune horde de référence n'a été configurée.",
       "carnetAlreadyExists": "Le scribe a déjà un carnet de contre."
     },

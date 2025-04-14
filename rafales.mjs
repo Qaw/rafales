@@ -220,3 +220,10 @@ Hooks.on("hotbarDrop", (bar, data, slot) => {
     return false
   }
 })
+
+Hooks.on("updateActor", (document, changed, options, userId) => {
+  console.log("updateActor", document, changed, options, userId)
+  if (document.id === game.settings.get("rafales", "hordeId")) {
+    if (game.user.isGM) game.system.applicationAdversity.render(true)
+  }
+})
