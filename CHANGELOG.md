@@ -1,3 +1,7 @@
+# 1.0.0
+
+- Sortie officielle du module
+
 # 0.9.2
 
 - Mise à jour du guide utilisateur
