@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Correction setting et suppression des {{log}}
+
 # 1.0.3
 
 - Ajout setting manquant

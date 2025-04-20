@@ -116,7 +116,7 @@ Hooks.once("init", function () {
   /**
    * World key used for statistics
    */
-  game.settings.register("cthack", "worldKey", {
+  game.settings.register("rafales", "worldKey", {
     name: "Unique world key",
     scope: "world",
     config: false,
