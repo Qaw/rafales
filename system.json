@@ -2,7 +2,7 @@
   "id": "rafales",
   "title": "Rafales",
   "description": "Un jeu de rôle d'après La Horde du Contrevent d'Alain Damasio",
-  "version": "1.0.0",
+  "version": "#{VERSION}#",
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
   "url": "#{URL}#",
@@ -60,11 +60,5 @@
         "ASSISTANT": "OWNER"
       }
     }
-  ],
-  "flags": {
-    "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["lang/en.json", "lang/fr.json", "rafales.css", "templates/**/*.hbs"]
-    }
-  }
+  ]
 }

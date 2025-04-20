@@ -1,3 +1,7 @@
+# 1.0.2
+
+- Release technique
+
 # 1.0.1
 
 - Désactivation du mode DEV
