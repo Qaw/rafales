@@ -1,3 +1,7 @@
+# 1.0.1
+
+- Désactivation du mode DEV
+
 # 1.0.0
 
 - Sortie officielle du module

@@ -2,7 +2,7 @@ import * as HORDE from "./horde.mjs"
 import * as HORDIER from "./hordier.mjs"
 
 export const SYSTEM_ID = "rafales"
-export const DEV_MODE = true
+export const DEV_MODE = false
 
 /**
  * Include all constant definitions within the SYSTEM global export
