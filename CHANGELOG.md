@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Ajout setting manquant
+
 # 1.0.2
 
 - Release technique

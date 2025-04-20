@@ -113,6 +113,17 @@ Hooks.once("init", function () {
     requiresReload: true,
   })
 
+  /**
+   * World key used for statistics
+   */
+  game.settings.register("cthack", "worldKey", {
+    name: "Unique world key",
+    scope: "world",
+    config: false,
+    type: String,
+    default: "",
+  })
+
   Handlebars.registerHelper("numeroLien", function (value) {
     return parseInt(value) + 1
   })
