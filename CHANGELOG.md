@@ -1,3 +1,7 @@
+# 1.0.5
+
+- Dernière version compatible V12
+
 # 1.0.4
 
 - Correction setting et suppression des {{log}}
